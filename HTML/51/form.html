@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .amazingButton{
+            color:red;
+            background:none;
+            border:none;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- you can set it to go to a diff. spot and not to your own page.
+    it's now a post and not a get. -->
+   <!--  <form action="processOrder.php" method="post"> -->
+        <form>
+        <!-- on form you need to say name= otherwise it won't work -->
+        <fieldset>
+            <legend>Personal Info</legend>
+        <label>First Name: 
+            <input type="text" name="firstName" value="Donald" readonly/>
+        </label>
+        <label for="lastName">Last Name: 
+            <input type="text" id="lastName" name="lastName" required />
+        </label>
+        <label>Password: 
+            <input type="password" name="password" minLength="5" maxLength="10" placeholder="Enter Password"/>
+        </label>
+        <label>Email: 
+            <input type="email" name="email"/>
+        </label>
+        </fieldset>
+
+        <fieldset>
+        <label>Number: 
+            <input type="number" name="number" step="5" min="0" max="5"/>
+        </label>
+        <label>Color: 
+            <input type="color" name="color"/>
+        </label>
+        <label>Date: 
+            <input type="date" name="date"/>
+        </label>
+        <label>Month: 
+            <input type="month" name="month" disabled/>
+        </label>
+        <label>Week: 
+            <input type="week" name="week"/>
+        </label>
+        </fieldset>
+
+        <fieldset>
+        <label>Range: 
+            <input type="range" name="range" min="0" max="5"/>
+        </label>
+         <label>Phone: 
+            <input type="tel" name="phone"/>
+        </label>
+
+        <label>Comments:<textarea name="comments">Inital text</textarea></label>
+        <input type="hidden" value="secret stuff" name="secret"/>
+        </fieldset>
+
+        <fieldset>
+        <label>
+            Do you think Donald Trump is doing a good job?
+            <input type="radio" name="trumpPoll" value="yes"/>Yes
+            <input type="radio" name="trumpPoll" value="no"/>No
+        </label>
+
+        <label>
+            
+            <input type="checkbox" name="sides" value="fries" checked/>Fries
+            <input type="checkbox" name="sides" value="onionrings"/>Onionrings
+            <input type="checkbox" name="sides" value="mashedpotatoes"/>Mashedpotatoes
+        </label>
+
+        <select name="car" required>
+            <option selected disabled>Pick one</option>
+            <option value="1">Honda</option>
+            <option>Toyota</option>
+            <option>Lamborghini</option>
+        </select>
+
+        </fieldset>
+        <input class="amazingButton" type="submit" value="SuperCalifagalisticespalidocious"/>
+        <input type="reset" value="Set form back to initial value"/>
+        <input type="button" value="Click Me!"/>
+
+        <button type="button"><img src="Images/faviconRest.jpg"/>No, Click Me!</button>
+        <button type="reset">No, Click Me to reset!</button>
+        <button type="submit">Submit here!</button>
+    </form>
+</body>
+</html>

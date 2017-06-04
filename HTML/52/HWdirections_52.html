@@ -1,0 +1,333 @@
+For homework, create a new homepage for your restaurant using bootstrap. It does not have to be fully featured and contain everything your current one does if you don't have time for that. It should include the following.
+bootstrap style button(s) that act as links (either in page or to another page). Maybe add some glyphicons for a nice look.
+Add an inline form for users to enter username password to "login" to the site (does nothing of course - just looks good)
+Have some content that appears in 3 columns on medium and large devices, 12 columns (full screen) on smaller.
+
+bootstrap2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--link rel="stylesheet" href="/bootstrap-3.3.7/css/bootstrap.min.css"/-->
+    <!--link rel="stylesheet" href="../../../bootstrap-3.3.7/css/bootstrap.min.css"/-->
+    <!--link rel="stylesheet" href="local.css"/-->
+    <!--link rel="stylesheet" href="../another-style.css"/-->
+    <!--link rel="stylesheet" href="/class/html/another-style.css"/-->
+    <!--link rel="stylesheet" href="http://localhost/class/html/another-style.css"/-->
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <p>One</p>
+            </div>
+            <div class="col-md-1">
+                <p>Two</p>
+            </div>
+            <div class="col-md-1">
+                <p>Three</p>
+            </div>
+            <div class="col-md-1">
+                <p>Four</p>
+            </div>
+            <div class="col-md-1">
+                <p>Five</p>
+            </div>
+            <div class="col-md-1">
+                <p>Six</p>
+            </div>
+            <div class="col-md-1">
+                <p>Seven</p>
+            </div>
+            <div class="col-md-1">
+                <p>Eight</p>
+            </div>
+            <div class="col-md-1">
+                <p>Nine</p>
+            </div>
+            <div class="col-md-1">
+                <p>Ten</p>
+            </div>
+            <div class="col-md-1">
+                <p>Eleven</p>
+            </div>
+            <div class="col-md-1">
+                <p>Twelve</p>
+            </div>
+            <div class="col-md-1">
+                <p>Thirteen</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tempore, praesentium, laudantium est 
+			</div>
+            <div class="col-md-4 col-lg-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, aut.
+            </div>
+            <div class="col-md-4 col-lg-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, aut.
+            </div>
+            <div class="clearfix visible-md-inline"></div>
+            <div class="col-md-4 col-lg-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, aut.
+            </div>
+            <div class="clearfix visible-lg-block"></div>
+            <div class="col-md-4 col-lg-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tempore, praesentium, 
+			</div>
+            <div class="col-md-4 col-lg-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, aut.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center">
+                center
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-push-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus amet 
+		 </div>
+            <div class="col-md-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel sequi reiciendis nihil, at sed tempore voluptatum alias fuga blanditiis ducimus?.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus amet illo 
+			</div>
+            <div class="col-md-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel sequi reiciendis nihil, at sed tempore voluptatum alias fuga blanditiis ducimus?.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, in?
+                    </div>
+                    <div class="col-md-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, in?
+                    </div>
+                    <div class="col-md-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, in?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+buttons bootstrap
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .glyphicon {
+            color: red;
+            font-size: 34px;
+            text-shadow: 3px 3px 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Buttons</h1>
+        <input class="btn" type="button" value="Click Me!"/>
+        <input class="btn btn-default" type="button" value="Click Me!"/>
+        <button class="btn btn-primary" type="button">No, Click Me!</button>
+        <a class="btn btn-success" href="https://www.google.com">Google</a>
+        <input class="btn btn-warning btn-xs" type="button" value="Click Me!"/>
+        <button class="btn btn-danger btn-sm" type="button">No, Click Me!</button>
+        <a class="btn btn-info btn-lg" href="https://www.google.com">Google</a>
+    
+        <div>
+            <button class="btn btn-danger btn-block" type="button">No, Click Me!</button>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg" type="button">Hot News! <span class="glyphicon glyphicon-fire"></span></button>
+        </div>
+    </div>
+</body>
+</html>
+
+forms bootstrap
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>forms</h1>
+        <h2>default</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" id="name" name="name" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" />
+            </div>
+
+            <input class="btn btn-primary" type="submit"/>
+        </form>
+        <h2>inline</h2>
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="control-label" for="name">Name</label>
+                <input class="form-control" id="name" name="name" />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" />
+            </div>
+
+            <input class="btn btn-primary" type="submit"/>
+        </form>
+        <h2>horizontal</h2>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="name" name="name" />
+                </div>
+            </div>
+
+            <div class="form-group has-error">
+                <label class="control-label col-sm-2" for="email">Email</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="email" id="email" name="email" />
+                </div>
+            </div>
+
+            <div class="form-group has-success">
+                <label class="control-label col-sm-2" for="donation">Donation</label>
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input class="form-control" type="number" id="donation" name="donation" />
+                        <div class="input-group-addon">.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <input class="btn btn-primary" type="submit"/>
+        </form>
+    </div>
+</body>
+</html>
+
+sample website bootstrap
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .glyphicon {
+            color: red;
+            font-size: 26px;
+            text-shadow: 3px 3px 5px black;
+        }
+        body { padding-top: 70px; }
+    </style>
+    <title>PCS Class</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#theLinks" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">PCS</a>
+            </div>
+            <div class="collapse navbar-collapse" id="theLinks">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">SQL</a></li>
+                    <li><a href="#">HTML/CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>PCS Class</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Java</h2>
+                <p>
+                    Java - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione natus, 
+				</p>
+                <p>
+                    <a class="btn btn-primary" href="#">Learn more <span class="glyphicon glyphicon-fire"></span></a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>SQL</h2>
+                <p>
+                    SQL -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione
+				</p>
+                <p>
+                    <a class="btn btn-primary" href="#">Learn more <span class="glyphicon glyphicon-fire"></span></a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>HTML/CSS</h2>
+                <p>
+                    HTML/CSS - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione 
+				</p>
+                <p>
+                    <a class="btn btn-primary" href="#">Learn more <span class="glyphicon glyphicon-fire"></span></a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>JavaScript</h2>
+                <p>
+                    JavaScript - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione 
+				</p>
+                <p>
+                    <a class="btn btn-primary" href="#">Learn more <span class="glyphicon glyphicon-fire"></span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--script src="/jquery-1.12.4.min.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

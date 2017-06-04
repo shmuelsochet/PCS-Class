@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        th,td{
+            border:1px solid black;
+            padding:8px 4px;
+
+        }
+        table{
+            border-collapse: collapse;
+            margin:0 auto;
+
+        }
+        /*old way*/
+        .odd{
+            background-color:lightblue;
+        }
+        /*new way, n being a counter multiplied by 2 that row will get it */
+        tr:nth-child(2n){
+            background-color: lightblue;
+        }
+        /*odds*/
+        /*
+        tr:nth-child(2n+1){
+            background-color: lightpink;
+        }
+        */
+        tbody th, tbody td, tfoot th, tfoot td{
+            text-align: right;
+        }
+        tfoot td{
+            color:red;
+            font-weight: bold;
+        }
+        tbody tr:hover{
+            background-color:pink !important;/*this style wins with less points*/
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Donald Trump's tweets per year</h2>
+    <hr>
+    <table>
+        <caption>Trump's Tweets</caption>
+        <thead>
+        <tr>
+            <th>YEAR</th>
+            <th>January</th>
+            <th>February</th>
+            <th>March</th>
+            <th>April</th>
+            <th>May</th>
+            <th>June</th>
+            <th>July</th>
+            <th>August</th>
+            <th>September</th>
+            <th>October</th>
+            <th>November</th>
+            <th>December</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>2017</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        </tbody>
+       
+         <tr>
+            <td>2016</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>          
+        </tr>
+
+        <tr>
+            <td>2015</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>          
+        </tr>
+
+        <tr>
+            <td>2014</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>          
+        </tr>
+
+        <tr>
+            <td>2013</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>         
+        </tr>
+        
+        <tr>
+            <td>2012</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>         
+        </tr>
+        
+         <tfoot>
+        <tr>
+            <td>All</td>
+            <td>4</td>
+            <td>6</td>
+            <td>42</td>
+            <td>24</td>
+            <td>34</td>
+            <td>23</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>           
+        </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

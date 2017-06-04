@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+       /* a[href="https://www.google.com"],  a[href="https://www.microsoft.com"]{
+            background-color:green;
+        }*/
+        /*starts with*/
+        a[href^="http"]{
+            background-color: green;
+        }
+        a{
+            padding:18px;
+            height: 36px;
+            display: inline-block;
+        }
+        /* $ ends with */
+        a[href$="pdf"]{
+            background: url("pdf.png") no-repeat;
+        }
+        /* * means contains this */
+        a[href*=".doc"]{
+            background:url("word.png") no-repeat;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="https://www.google.com">google</a></li>
+        <li><a href="https://www.microsoft.com">microsoft</a></li>
+        <li><a href="#one">one</a></li>
+        <li><a href="#two">two</a></li>
+        <li><a href="myDocument.doc">my Document</a></li>
+        <li><a href="myDocument1.docx">my document </a></li>
+        <li><a href="myPdf.pdf">my pdf file</a></li>
+        
+    </ul>
+</body>
+</html>

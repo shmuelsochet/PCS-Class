@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" >
+    <style>
+        span.color{
+            color:#722f37;
+        }
+        div{
+            padding:10px;
+            
+        }
+        
+    </style>
+    <title>Crème brûlée</title>
+</head>
+<body>
+   <audio src="Music/Tzav.m4a" autoplay loop ></audio>
+
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#theLinks" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Crème brûlée</a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="theLinks">
+                <ul class="nav navbar-nav">
+                    <li><a class="btn btn-default btn-xs" href="HWmenu.html">Menu<span class="glyphicon glyphicon-glass color"</span></a></li>
+                    <li><a class="btn btn-default btn-xs" href="https://google.com">About<span class="glyphicon glyphicon-glass color"</span></a></li>
+                    <li><a class="btn btn-default btn-xs" href="https://www.google.com/maps?hl=en&tab=wl">Directions<span class="glyphicon glyphicon-glass color"</span></a></li>
+                    <li><a class="btn btn-default btn-xs" href="#contactUs">Contact Us<span class="glyphicon glyphicon-glass color"</span></a></li>
+                     <li><a class="btn btn-default btn-xs" href="#contactUs">Log in<span class="glyphicon glyphicon-glass color"</span></a></li>
+                </ul>
+            </div>
+                    
+        </div>
+    </nav>
+	<div class="container">
+        <div>
+
+        </div>
+        <div class="jumbotron">
+            <header>
+                <h1>Crème brûlée</h1>
+            </header>
+        </div>
+    </div>
+	<div class="container">
+        
+            
+        <form class="form-inline">
+
+            <div class="form-group">
+                <label class="control-label" for="username">Username</label>
+                <input class="form-control" id="username" name="username"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label has-error" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password"/>
+            
+                <input class="btn btn-primary" type="submit"/>
+            </div>
+                
+        </form>
+            
+        
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <article class="description ilb">
+                    Started in 1968, Crème Brûlée was the childhood dream of Liongang Puck. 
+                    A fine French Cuisine cafe style restaurant
+                    in the heart of Brooklyn, Crème Brûlée awakens your artisinal spirit.
+	            </article>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <ul>
+                    <li>Head Chef</li>
+                    <li >Baker</li>
+                    <li >Assistant Chef</li>
+                    <li >Barista</li>
+                    <li >Chef</li>
+                    <li >Expeditor</li>
+                    <li >Sous Chef</li>
+                    <li >Executive Chef</li>			
+		        </ul>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <form id="contactUs">
+			        <label for="firstName">First Name</label> 
+				    <input type="text" id="firstName" name="firstName"/>			
+			        <label for="lastName">Last Name</label>
+				    <input type="text" id="lastName" name="lastName" required/>
+			        <label for="email">Email</label>
+				    <input type="email" id="email" name="email"/>
+			        <label for="comment">Comment</label>
+			        <textarea rows="4" cols="22" id="comment" name ="comment" form="feedback" placeholder="Say something nice or else..."></textarea>
+			        <label>
+				        How are we doing?
+			        </label>
+				    <input class="inline" type="radio" name="feedback" value="great" checked/>Great!<br>
+				    <input class="inline" type="radio" name="feedback" value="could be better"/>Could be better<br>
+				    <input class="inline" type="radio" name="feedback" value="horrible"/>Terrible<br>
+			
+			        <label>Mild
+				    <input type="range" name="hotness" min="1" max="10" step="1"/>
+			        Spicy
+			        </label>
+
+			        <input type="submit"/>
+			
+		        </form>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script> 
+</body>
+</html>

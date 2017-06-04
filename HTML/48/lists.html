@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		.heb {
+			list-style-type: hebrew;
+		}
+		
+		.square {
+			list-style-type: square;
+		}
+		
+		.bullet {
+			list-style-image: url(bullet.png);
+		}
+		
+		li {
+			border: 1px solid black;
+			background-color: green;
+			line-height: 69px;
+			font-size: 197px;
+		}
+		
+		li {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		
+		li {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		
+	</style>
+	<title>Document</title>
+</head>
+<body>
+    <h2>Things to do</h2>
+	<ul class ="heb">
+		<li>Learn HTML Really Really Well So I CAN GET A JOB</li>
+		<li>Learn CSS</li>
+		<li>Learn JavaScript</li>
+		<ul class="square">
+			<li>Learn PHP</li>
+			<li>Learn MYSQL</li>
+			<li>Learn Java</li>
+			<!--li-->
+				<ul class="bullet">
+					<li>Learn PHP</li>
+					<li>Learn MYSQL</li>
+					<li>Learn Java</li>
+					<ul>
+						<li>Learn PHP</li>
+						<li>Learn MYSQL</li>
+						<li>Learn Java</li>
+					</ul>
+				</ul>
+			<!--/li-->
+		</ul>
+	</ul>
+	
+	<h2>More things to do</h2>
+	<ol>
+		<li>Learn PHP</li>
+		<li>Learn MYSQL</li>
+		<li>Learn Java</li>
+		<ol>
+			<li>Learn PHP</li>
+			<li>Learn MYSQL</li>
+			<li>Learn Java</li>
+			<ol>
+				<li>Learn PHP</li>
+				<li>Learn MYSQL</li>
+				<li>Learn Java</li>
+				<ol>
+					<li>Learn PHP</li>
+					<li>Learn MYSQL</li>
+					<li>Learn Java</li>
+				</ol>
+			</ol>
+		</ol>
+	</ol>
+</body>
+</html>
