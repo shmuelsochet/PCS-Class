@@ -1,8 +1,0 @@
-id  class   type
-1   0       0       #it //id first and it has 100s
-0   1       0       .foo //this is tens
-0   0       1       p   //ones
-
-0   1       1       .foo p //has ones and tens
-
-0   10      0       .one .two etc... .tens      
