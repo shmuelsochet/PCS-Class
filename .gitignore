@@ -1,7 +1,7 @@
 /HTML/my_class_notes
 HTML/class
 HTML/another-style.css
-HTML/Test\ Practice
-HTML/TestPractice
+HTML/Test Practice
 HTML/Test
-
+/*you can use a space(HTML/Test Practice) or \ (HTML/Test\ Practice) 
+plus a space or *(HTML/Test*Practice) for files or directories with spaces in them*/
