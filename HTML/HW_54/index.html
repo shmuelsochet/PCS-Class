@@ -13,12 +13,23 @@
      <header>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container"> 
-                <ul class="nav navbar-nav">
-                    <li><a  class="navbar-brand"   href="#products">Products</a></li>
-                    <li><a  class="navbar-brand"  href="#signUp">Sign Up</a></li>
-                    <li><a  class="navbar-brand"  href="#financials">Financials</a></li>
-                    <li><a  class="navbar-brand"  href="#aboutUs">About Us</a></li>
-                </ul>     
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#links" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">ESTUFF</a>
+                </div>
+                <div class="collapse navbar-collapse" id="links" >
+                    <ul class="nav navbar-nav">
+                        <li><a    href="#products">Products</a></li>
+                        <li><a    href="#signUp">Sign Up</a></li>
+                        <li><a   href="#financials">Financials</a></li>
+                        <li><a    href="#aboutUs">About Us</a></li>
+                    </ul>
+                </div>     
             </div>
         </nav>
     </header>
@@ -40,19 +51,19 @@
         <div class="row">
             <section class="col-md-4 col-md-12 verticalBar">
                 <h3 class="text-center">Computers</h3>
-                <img class="img-responsive center-block img"  src="macworld.jpg" alt="mac presentation">
+                <img class="img-responsive center-block img"  src="../../Images/macworld.jpg" alt="mac presentation">
                 <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo corrupti</p>
             </section>
             <section class="col-md-4 col-sm-12 verticalBar">
                 <h3 class="text-center">Choirs</h3>
-                <video class="img-responsive img" preload="metadata" poster="shira.png" controls>
-                    <source src="El_Hanaar_Hazeh.mp4"/>
+                <video class="img-responsive img" preload="metadata" poster="../../Images/shira.png" controls>
+                    <source src="../../Video/El_Hanaar_Hazeh.mp4"/>
                 </video>
                 <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo corrupti</p>       
             </section>
             <section class="col-md-4 col-sm-12">
                 <h3 class="text-center">Candy</h3>
-                <img class="img-responsive img" src="candy.png" alt="candy">
+                <img class="img-responsive img" src="../../Images/candy.png" alt="candy">
                 <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo corrupti</p>       
             </section>
         </div>
@@ -103,7 +114,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse tenetur molestiae facere sequi eligendi dolore sint, distinctio vero sed cumque aperiam ad rem amet porro culpa, illum consectetur nulla minus. Mollitia aspernatur illum impedit, delectus expedita dolores, tempore sapiente rem, perspiciatis ratione praesentium molestias, nesciunt debitis officiis quo! Vel laudantium, praesentium dolor eligendi ad veritatis sequi rem, aliquam quisquam rerum sit aliquid nam similique necessitatibus nostrum totam excepturi nihil reprehenderit, iste incidunt amet magnam adipisci. Voluptas harum eveniet ipsa dolore facere consequuntur distinctio, sed doloribus commodi magni accusantium vero odio libero, consectetur nesciunt illum, impedit quisquam incidunt! Tenetur, hic!</p>
             
         </section>
-        <section class="table">
+        <section class="table-responsive">
             <table class="table table-bordered table-striped table-hover" id="countit">
                 <caption class="text-center"><h3>Profits - By Quarter</h3></caption>
                 <thead>
@@ -212,8 +223,7 @@
             </footer>
         </div>
      </div>
-
-
-    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script> 
 </body>
 </html>
