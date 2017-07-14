@@ -3,27 +3,47 @@
     $book = "";
     if(!empty($_GET['book'])){
        
-            $cs = "mysql:host=localhost;dbname=books";
-            $user = "test";
-            $password = "test";
+        $cs = "mysql:host=localhost;dbname=books";
+        $user = "test";
+        $password = "test";
 
-            try{
-                $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-                $db = new PDO($cs, $user, $password, $options);
-                $query = "SELECT name FROM books";
-                $results = $db ->query($query);
-                $bookNames = $results ->fetchAll();
-                $results ->closeCursor();
+        try{
+            $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+            $db = new PDO($cs, $user, $password, $options);
+            $query = "SELECT name FROM books";
+            $results = $db ->query($query);
+            $bookNames = $results ->fetchAll();
+            $results ->closeCursor();
+
+            //print_r($bookNames);
+            
+
+        }catch(PDOException $ex){
+                die("Something went wrong" . $ex ->getMessage());
+        }
+
+        //not working says book not valid when valid, because I didn't use where id = in statment
+        // $selectedBook = $results -> fetch();
+        // if(empty($selectedBook)){
+        //      $errors[] = "{$_GET['book']} is not a valid or available book";
+        // }
+        $isInArray = false;
+        foreach($bookNames as $myBook){
+            // echo "I am printing myBook";
+            // print_r($myBook);
+            if( in_array($_GET['book'], $myBook)){    
                 
-
-            }catch(PDOException $ex){
-                    die("Something went wrong" . $ex ->getMessage());
-                }
-        if(! in_array("{$_GET['book']}", $bookNames)){
+                $isInArray = true;
+            }
+               
+        }
+        if(! $isInArray){
             $errors[] = "{$_GET['book']} is not a valid or available book";
         }
         $book = $_GET['book'];
 
+
+        
     }else{
         $errors[] = "You must choose a book";
     }
@@ -32,30 +52,54 @@
 
     function getBookPrice(){
         global $book;
+        
         $cs = "mysql:host=localhost;dbname=books";
         $user = "test";
         $password = "test";
 
         
+        if(!empty($_GET['book'])){
+        
+            try{
+                $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+                $db = new PDO($cs, $user, $password, $options);
+                // $query = "SELECT price FROM books WHERE name = '{$_GET['book']}'";
+                // $results = $db ->query($query);
 
-        try{
-            $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-            $db = new PDO($cs, $user, $password, $options);
-            $query = "SELECT price FROM books WHERE name = '{$_GET['book']}'";
-            $results = $db ->query($query);
-            $bookPrices = $results ->fetchAll();
-            $results ->closeCursor();
-            $allBookPrices = "";
-            foreach($bookPrices as $bookPrice ){
-                $allBookPrices .= "{$bookPrice['price']}";
-            }
-            return $allBookPrices;
+                //to prevent sql injection use a prepared statment
+                $query = "SELECT price FROM books WHERE name = :theId";
+                //$query = "SELECT price FROM books WHERE name = :theId OR :anotherId";
+                //$query = "SELECT price FROM books WHERE name = ? OR ?";
+                $statement = $db -> prepare($query);
+                //for statment with id
+                $statement -> bindValue('theId', $_GET['book']);
+               // $statement -> bindValue('anotherId', 53);
 
-        }catch(PDOException $ex){
-                die("Something went wrong" . $ex ->getMessage());
-            }
+                //for statement with "?"
+                //$statement -> bindValue(1, $_GET['book']);
+                //$statement -> bindValue(2,53);
+                $statement -> execute();
+                
+                //$bookPrices = $results ->fetchAll();
+                $bookPrices = $statement ->fetchAll();
+                
+                //$results ->closeCursor();
+                $statement ->closeCursor();
+                
+                $allBookPrices = "";
+                foreach($bookPrices as $bookPrice ){
+                    $allBookPrices .= "{$bookPrice['price']}";
+                }
+                return $allBookPrices;
 
-        }
+            }catch(PDOException $ex){
+                    die("Something went wrong" . $ex ->getMessage());
+                }
+
+            }else{
+                $errors[] = "You must choose a book";
+        }   
+    }
   
 ?>
 
