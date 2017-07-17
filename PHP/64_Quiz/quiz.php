@@ -1,50 +1,50 @@
 <?php
-
-    //table names and grades id every test new same name and new grade
-    //write php file that fetches all students and grades and allows user to pick a student and delete
-    //display each student and their grades and all have same numbers show in table
-    //then let delete and all grades should go away. 
-    //show stuff and delete. one name and one grade
-
-
     
     $cs = "mysql:host=localhost;dbname=php";
     $user = "test";
     $password = 'test';
     try {
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-        $db = new PDO($cs, $user, $password, $options);
-        
-        
-        
-        $query = "SELECT DISTINCT name FROM students";
+        $db = new PDO($cs, $user, $password, $options);  
+        $query = "SELECT DISTINCT e1.name AS name, e1.grade AS grade1, e2.grade AS grade2 
+                    FROM students e1
+                    JOIN students e2 
+                    ON e1.name = e2.name
+                    WHERE e1.grade <> e2.grade
+                    GROUP BY name";
+        //$theGrade = "grade1";
+        //$theGrade2 = "grade2";
         $statement = $db->prepare($query);
+        $statement->bindValue(1, "e1.grade");
+        $statement->bindValue(2, "e2.grade");
         $statement->execute();
         $students = $statement->fetchAll();
+
+        print_r($students);
         $statement->closeCursor();
 
-        $query2 = "SELECT grade FROM students WHERE name = :theName";
+        //couldn't figure out how to do it with double foreach and using the name to get the grade
+        //$theName = $student['name'];
+        // $query2 = "SELECT grade FROM students WHERE name = :theName";  
+        // $statement2 = $db->prepare($query2);
+        // $statement2->bindValue('theName', $theName);
+        // $statement2->execute();
+        // $studentGrades = $statement2->fetchAll();
+        // $statement2->closeCursor();
         
-        $theName = $student['name'];
-        $statement2 = $db->prepare($query2);
-        $statement2->bindValue('theName', $theName);
-        $statement2->execute();
-        $studentGrades = $statement2->fetchAll();
-        $statement2->closeCursor();
-    
-        if(isset($_POST['delete'])){
-            $theName =  $_POST['delete'];
-            $query3 = "DELETE FROM students WHERE name = :theName";
-            $statement3 = $db->prepare($query3);
-            $statement3->bindValue('theName', $theName);
-            $statement3->execute();
-            $statement3->closeCursor();
+        if($_SERVER["REQUEST_METHOD"] === "POST"){
+                if(isset($_POST['delete'])){
+                $theName =  $_POST['delete'];
+                $query3 = "DELETE FROM students WHERE name = :theName";
+                $statement3 = $db->prepare($query3);
+                $statement3->bindValue('theName', $theName);
+                $statement3->execute();
+                $statement3->closeCursor();
+            }else{
+                $error = "You must have something to delete when submitting.";
+            }
         }
-       
-        
-       
-        
-
+         
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
     }
@@ -77,7 +77,6 @@
                     <th>Student</th>
                     <th>Grade 1</th>
                     <th>Grade 2</th>
-                    <th>Grade 3</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -85,13 +84,12 @@
                 <?php foreach($students as $student) :?>
                 <tr>
                     <td><?= $student['name'] ?></td>
-                
-                <?php foreach($studentGrades as $grade) : ?>
-                    <td><?= $grade['grade'] ?></td>
-                    <td><?= $grade['grade'] ?></td>
-                    <?php endforeach ?>
-                   
+                    <td><?= $student['grade1'] ?></td>
 
+                    <?php print_r($student['grade1']); ?>
+                    <td><?= $student['grade2'] ?></td>
+                    <?php print_r($student['grade2']); ?>
+                   
                     <td>
                         <form method="post">
                             <input type="hidden" name="delete" class="btn btn-danger" value="<?= $student['name'] ?>" ></input>
@@ -99,11 +97,6 @@
                         </form>
     
                     </td>
-    
- 
-            
-                   
-                </div>
                     
                 </tr>
                 <?php endforeach ?>
@@ -112,13 +105,12 @@
         </table>
     </div>
             
-
         <?php if(!empty($error)) : ?>
             <h2 class="text-center alert alert-danger">
                 <?= $error ?>
             </h2>
         <?php endif ?>
-    </div>
+   
 </body>
 
 </html>
