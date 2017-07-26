@@ -31,6 +31,7 @@
     //     }
     // }
     function years(){
+        $allYears = "";
         for($i = 0; $i < 10; $i++){
             $allYears .= "<option>$i</option>";
             

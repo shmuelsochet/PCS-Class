@@ -6,11 +6,17 @@
     
         if(isset($_POST['name'])) {
             if( empty($_POST['name']) || is_numeric($_POST['name'])) {
-                $errors[] = "Name cannot be a number or Empty";
+                $errors[] = "Name cannot be a number or empty";
             }
            $name = $_POST['name']; //why set if it's a number?
         } else {
             $errors[] = "Name is a required field";
+            //Prof. Lub did this in HW
+            //$name = "Name is required";
+            //or
+            //$name = "UNSPECIFIED";
+            //or
+            //die("Name is required");
         }
         if(isset($_POST['email'])) {
              if(! preg_match( '+@+', $_POST['email'])) {
@@ -65,12 +71,12 @@
             <h2>Rating</h2>
         </div>
         <?php if (isset($errors)) : ?>
-            <div class="well text-danger">
-                <ul>
+            <div class="well alert-danger">
+                <ol>
                     <?php foreach($errors as $error) : ?>
                         <li><?= $error ?></li>
                     <?php endforeach ?>
-                </ul>
+                </ol>
             </div>
         <?php endif ?>
     

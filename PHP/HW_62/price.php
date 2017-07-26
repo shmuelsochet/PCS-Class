@@ -1,9 +1,11 @@
 <?php
 
+    //add if first time then don't say that price is required
+    
     $book = "";
     if(!empty($_GET['book'])){
        
-        $cs = "mysql:host=localhost;dbname=books";
+        $cs = "mysql:host=localhost;dbname=php";
         $user = "test";
         $password = "test";
 
@@ -12,7 +14,8 @@
             $db = new PDO($cs, $user, $password, $options);
             $query = "SELECT name FROM books";
             $results = $db ->query($query);
-            $bookNames = $results ->fetchAll();
+            $bookNames = $results ->fetchAll(PDO::FETCH_ASSOC);
+            print_r($myBook);
             $results ->closeCursor();
 
             //print_r($bookNames);

@@ -34,6 +34,20 @@
                         </div>
                     </div>
                 </div>
+
+                 <?php if(!empty($_POST['book']) ) : ?>
+
+                <div class="form-group">
+                    <div class="row">
+            
+                        <label class="col-sm-offset-2 col-sm-2 control-label">You Deleted</label>
+                        <div class="col-sm-3 well text-center"><?= "Id: " . $book ?> </div> 
+                    </div>
+                </div>
+
+            <?php endif ?>
+    
+                </div>
                         
                 <div class="form-group">
                     <div class="row">
@@ -49,6 +63,8 @@
                         
                     </div>
                 </div>
+
+                
             </form>
     
         </div>

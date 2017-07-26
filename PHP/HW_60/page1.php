@@ -1,7 +1,7 @@
 <?php
 
     
-
+    $title = "Home Page";
     if(!empty($_GET['color'])){
         $color = $_GET['color'];
     }
@@ -9,18 +9,39 @@
         $font = $_GET['font'];
     }
 
-    $font = [
+    $fonts = [
         "Abadi MT Condensed Light",
         "Aharoni",
         "Aldhabi",
-        "Andalus"
+        "Andalus",
+        "Aparajita",
+        "Arial",
+        "Arial Black",
+        "Calibri",
+        "Calisto MT",
+        "Cambria",
+        "Cambria Math",
+        "Candara",
+        "Century Gothic",
+        "Comic Sans MS",
+        "Consolas",
+        "Constantia",
+        "Copperplate Gothic Bold",
+        "Corbel",
+        "Impact",
+        "Trebuchet MS",
+        "Verdana",
+        
 
 
 
 
 
 
-    ]
+     ];
+     
+     
+    
 ?>
 
 <?php include "top.php" ?>
@@ -41,12 +62,17 @@
                 <div class="col-sm-6">
                 <select class="form-control" name="font" xmultiple>
                     <?php
+                        foreach($fonts as $key => $font): ?>
 
-                    ?>
-                    <option>Helvetica</option>
+                    <option value="<?= $font ?>"
+                        <?php if ($font === $_GET['font']) echo "selected"  ?>
+                        ><?= $fonts["$key"] ?>
+                    </option>
+                        <?php endforeach ?>
+                    <!--<option>Helvetica</option>
                     <option>Arial</option>
                     <option>Time New Roman</option>
-                    <option>Comic Sans MS</option>
+                    <option>Comic Sans MS</option>-->
                 </select>
                 </div>
             </div>

@@ -1,37 +1,13 @@
-<?php
+ <?php
     
     $cs = "mysql:host=localhost;dbname=php";
     $user = "test";
     $password = 'test';
     try {
+
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);  
-        $query = "SELECT DISTINCT e1.name AS name, e1.grade AS grade1, e2.grade AS grade2 
-                    FROM students e1
-                    JOIN students e2 
-                    ON e1.name = e2.name
-                    WHERE e1.grade <> e2.grade
-                    GROUP BY name";
-        //$theGrade = "grade1";
-        //$theGrade2 = "grade2";
-        $statement = $db->prepare($query);
-        $statement->bindValue(1, "e1.grade");
-        $statement->bindValue(2, "e2.grade");
-        $statement->execute();
-        $students = $statement->fetchAll();
 
-        print_r($students);
-        $statement->closeCursor();
-
-        //couldn't figure out how to do it with double foreach and using the name to get the grade
-        //$theName = $student['name'];
-        // $query2 = "SELECT grade FROM students WHERE name = :theName";  
-        // $statement2 = $db->prepare($query2);
-        // $statement2->bindValue('theName', $theName);
-        // $statement2->execute();
-        // $studentGrades = $statement2->fetchAll();
-        // $statement2->closeCursor();
-        
         if($_SERVER["REQUEST_METHOD"] === "POST"){
                 if(isset($_POST['delete'])){
                 $theName =  $_POST['delete'];
@@ -44,6 +20,36 @@
                 $error = "You must have something to delete when submitting.";
             }
         }
+
+
+        
+        $query = "SELECT DISTINCT e1.name AS name, e1.grade AS grade1, e2.grade AS grade2 
+                    FROM students e1
+                    JOIN students e2 
+                    ON e1.name = e2.name
+                    WHERE e1.grade <> e2.grade 
+                    GROUP BY name"; // you need e1.id = e2.id in case a student has 2 of the same grades
+        //$theGrade = "grade1";
+        //$theGrade2 = "grade2";
+        $statement = $db->prepare($query); 
+        $statement->bindValue(1, "e1.grade");
+        $statement->bindValue(2, "e2.grade");
+        $statement->execute();
+        $students = $statement->fetchAll();
+
+       // print_r($students);
+        $statement->closeCursor();
+
+        //couldn't figure out how to do it with double foreach and using the name to get the grade
+        //$theName = $student['name'];
+        // $query2 = "SELECT grade FROM students WHERE name = :theName";  
+        // $statement2 = $db->prepare($query2);
+        // $statement2->bindValue('theName', $theName);
+        // $statement2->execute();
+        // $studentGrades = $statement2->fetchAll();
+        // $statement2->closeCursor();
+        
+        
          
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
@@ -86,9 +92,9 @@
                     <td><?= $student['name'] ?></td>
                     <td><?= $student['grade1'] ?></td>
 
-                    <?php print_r($student['grade1']); ?>
+                    <!-- <?php print_r($student['grade1']); ?> -->
                     <td><?= $student['grade2'] ?></td>
-                    <?php print_r($student['grade2']); ?>
+                    <!-- <?php print_r($student['grade2']); ?> -->
                    
                     <td>
                         <form method="post">

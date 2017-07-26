@@ -1,7 +1,7 @@
 <?php
 
     function getBookNames(){
-        $cs = "mysql:host=localhost;dbname=books";
+        $cs = "mysql:host=localhost;dbname=php";
         $user = "test";
         $password = "test";
 

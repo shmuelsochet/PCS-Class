@@ -1,7 +1,17 @@
 <?php
 
-    
-        $cs = "mysql:host=localhost;dbname=books";
+        //add link to go back to choose a book page.
+        //add php validation. 
+        // - if $_SERVER post then run else first time so don't validate
+        //add msg for number of rows inserted. rowCount property on statment. 
+        //add top and bottom
+        
+        //form to submit and user should not see what is happening during that submit
+        //input type= "hidden" name="hiddenData" value="You can't see me"> or css display none(include id in hidden field)
+
+        
+
+        $cs = "mysql:host=localhost;dbname=php";
         $user = "test";
         $password = "test";
 
@@ -54,7 +64,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../../bootstrap-3.3.7/css/bootstrap.min.css">
     
-    <title>Select Book</title>
+    <title>Add a Book</title>
 </head>
 <body>
     <div class="container">

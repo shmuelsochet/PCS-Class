@@ -1,14 +1,35 @@
 <?php 
-    if(empty($color)){
+    if(empty($title)){
+        $title = "Unnamed Page";
+    }
+    if(!empty($_GET['color'])){
+        $color = $_GET['color'];
+    }else{
         $color = "black";
     }
-    if(empty($font)){
-        $font = "arial";
+    if(!empty($_GET['font'])){
+        $font = $_GET['font'];
+        
+    }else{
+        $font = "sans-serif";
     }
 
-    $myUrl = "";
+    
+    //$params = "?color=" .urlencode("$color") . "&font=" .urlencode("$font");
 
-    if(!empty($color))
+    $params = "";
+    $delimiter = "?";
+    foreach($_GET as $key => $value){
+        //if empty put ? else put &
+        //this
+        //$params = empty($params) ? "?" : "&";
+        //or this
+        $params .= $delimiter;
+        $params .= "$key=" .  urlencode($value);
+        $delimiter = "&";
+    }
+
+    // if(!empty($color))
 
 ?>
 
@@ -44,9 +65,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="links" >
                     <ul class="nav navbar-nav">
-                        <li><a    href="page1.php?color=" <?= $color ?> >Page 1</a></li>
-                        <li><a    href="page2.php">Page 2</a></li>
-                        <li><a   href="page3.php">Page 3</a></li>
+                        <li><a href="page1.php?color=<?= urlencode($color) ?>&font=<?= urlencode($font)?>">Page 1</a></li>
+                        <li><a href="<?= $params ?>" >Page 2</a></li>
+                        <li><a href="<?= $params ?>" >Page 3</a></li>
                         
                     </ul>
                 </div>      
@@ -55,5 +76,5 @@
     </header>
     <div class="container">
         <div class="jumbotron text-center">
-            <h1>Choose Font and Color</h1>
+            <h1><?= $title ?></h1>
         </div>

@@ -2,7 +2,7 @@
 <?php
 
     
-
+    $title = "Page 3";
     if(!empty($_GET['color'])){
         $color = $_GET['color'];
     }

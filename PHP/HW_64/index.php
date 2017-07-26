@@ -45,7 +45,7 @@
 
                 $query = "";
                 
-            }else(!empty($_GET['book']) && isset($_GET['book'])){
+            }elseif(!empty($_GET['book']) && isset($_GET['book'])){
                 $errors[] = "You must choose a book";
             }
 
