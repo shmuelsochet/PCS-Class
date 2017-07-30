@@ -1,4 +1,5 @@
 <?php
+    include 'controllers/categorySelectionController.php';
 
     if(isset($_GET["book"])) {
         if((empty($_GET["book"]) || !is_numeric($_GET["book"])) ){
@@ -15,12 +16,14 @@
         }
         
     }else{
-        if(! empty($_GET['category'])){
-                $category = "{$_GET['category']}";
-            }
+        //category controller brings this in
+        // if(! empty($_GET['category'])){
+        //         $category = "{$_GET['category']}";
+        //     }
             
     }
-    //include "models/homeModel.php";
-    //include "views/homeView.php";
+    include 'models/categoryModel.php';
+    include "models/homeModel.php";
+    include "views/homeView.php";
 
 ?>

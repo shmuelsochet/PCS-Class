@@ -19,45 +19,49 @@
             <?php endif ?>
 
             <div class="row">
-                <?php include 'filters.php' ?>
-            </div>
-        <form class="form-horizontal" action="" method="get" >
-                <div class="form-group">
-                   
-                        <label for="book" class="col-sm-offset-2 col-sm-2 control-label">Book</label>
-                        <div class="col-sm-3">
-                            <select class="form-control " name="book" >
-                                
-                                    <?= $allBookNames ?>
-                                
-                            </select>
+                <!-- //<?php include 'filters.php' ?> -->
+                <?php include 'views/categorySelectionView.php'; ?>
+                
+                <div class="col-sm-9">          
+                    <form class="form-horizontal" action="" method="get" >
+                        <div class="form-group">
+                        
+                            <label for="book" class="col-sm-offset-2 col-sm-2 control-label">Book</label>
+                            <div class="col-sm-3">
+                                <select class="form-control " name="book" >
+                                    
+                                        <?= $allBookNames ?>
+                                    
+                                </select>
+                            </div>
+                            
                         </div>
-                    </div>
-                </div>
 
-            <?php if(!empty($_GET['book'])) : ?>
+                    <?php if(!empty($_GET['book'])) : ?>
 
-                <div class="form-group">
+                        <div class="form-group">
+                    
+                                <label for="book" class="col-sm-offset-2 col-sm-2 control-label">Price</label>
+                                <div class="col-sm-3 well text-center">$<?= $allBookPrices ?></div>
+                            
+                        </div>
+
+                    <?php endif ?>
             
-                        <label for="book" class="col-sm-offset-2 col-sm-2 control-label">Price</label>
-                        <div class="col-sm-3 well text-center">$<?= $allBookPrices ?></div>
-                    </div>
-                </div>
-
-            <?php endif ?>
-    
-                </div>
                         
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-offset-4 col-sm-8">
-                           
-                            <button  type="submit" class="btn btn-primary">Price</button>
-                        
-                        </div>                                     
-                    </div>
+                                
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                
+                                    <button  type="submit" class="btn btn-primary">Price</button>
+                                
+                                </div>                                     
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
                 
         </div>
 

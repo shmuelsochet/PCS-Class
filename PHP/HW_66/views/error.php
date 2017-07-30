@@ -5,9 +5,9 @@ include 'top.php'; ?>
 
 <h2 class="alert alert-danger"> Something went wrong! </h2>
 
-<?php if(!emtpy($error)):?>
+<?php if(!empty($error)):?>
 
-<h3 class="alert alert-danger"><?= $errpr ?></h3>
+<h3 class="alert alert-danger"><?= $error ?></h3>
 
 
 <?php endif ?>

@@ -3,22 +3,48 @@
         
     include 'utils/db.php';
 
+    //for without category array
+    // if(empty($category)){
+    //     $category = "";
+    // }
+
+    //for  category array
+    if(empty($category)){
+        $category = [];
+    }
     try{
         
 
         
-        $query = "SELECT id, name FROM books";
-        if(!empty($category)){
-            $query .= " WHERE category = :category ";
+        // $query = "SELECT id, name FROM books";
+        // if(!empty($category)){
+        //     $query .= " WHERE category = :category ";
+        // }
+        
+        // $statement = $db ->prepare($query);
+
+        // if(! empty($category)){
+        //     $statement -> bindValue('category', $category);
+        // }
+
+        //another way so if it's empty it will be "" (see line 6-8) and then the first WHERE will be true so you'll get all books
+        /*$query = "SELECT id, name FROM books WHERE :category  = '' OR category = :category";*/
+        
+        //sql for category array
+        
+        $query = "SELECT id, name FROM books"; 
+        if(!empty($categoryFilter)){
+            //find the right amount of "?" and then join it in a string to bind with the sql stmt
+            $qm = array_fill(0,count($categoryFilter), '?');
+            $in = join(",",$qm);
+            $query .= " WHERE category IN ($in)";
         }
         
         $statement = $db ->prepare($query);
-
-        if(! empty($category)){
-            $statement -> bindValue('category', $category);
-        }
+        //$statement -> bindValue('category', $category);
         
-        $statement -> execute();
+        //pass in array
+        $statement -> execute($categoryFilter);
         $bookNames = $statement ->fetchAll();
         $statement ->closeCursor();
         
