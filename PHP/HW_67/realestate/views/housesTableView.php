@@ -16,6 +16,7 @@
         <?php include 'filters.php' ?>
 
             <div class="col-sm-9">
+                <?php include 'pager.php' ?>
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -40,28 +41,11 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
-            </div>
-        </div>
+                <?php include 'pager.php' ?>
+            </div>     
+        </div>    
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-offset-sm-3 col-sm-4">
-                <?php if($offset - 4 >= 0) : ?>
-                <a href="<?= getLink(['action'=>'table','offset' => $offset - 4])?>" class="btn btn-default">Previous</a>
-                <?php else : ?>
-                <a href="" class="btn btn-default disabled">First Page</a>
-                <?php endif ?>
-
-                <?php if($offset + 4 > $housesCount[0]) : ?>
-                <a href="" class="btn btn-default disabled">Last Page</a>
-                <?php else : ?>
-                <a href="<?= getLink(['action'=>'table','offset' => $offset + 4])?>" class="btn btn-default">Next</a>
-                <?php endif ?>
-            </div>
-        </div>
-    </div>
-
-
+    
 <?php
 include 'bottom.php';
 ?>

@@ -25,6 +25,6 @@
             </div>
         </div>
         <input type="hidden" name="action" value="<?= $action ?>">
-        <input type="submit" value="filter"/>
+        <input class="btn" type="submit" value="filter"/>
     </form>
 </div>

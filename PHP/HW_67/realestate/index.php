@@ -1,4 +1,10 @@
 <?php
+
+//things to add to web page
+//should be able to sort by price, zip,. Pass in column to sort by. Protect against sql injection, have array of columns
+//and is not in array can't sort by that column. 
+//user should be able to choose how many per page
+
 $action = "home";
 if(!empty($_GET['action'])) {
     $action = $_GET['action'];

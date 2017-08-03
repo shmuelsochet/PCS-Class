@@ -13,14 +13,14 @@ if (empty($max)) {
     $max = '';
 }
 
-$offset = 0;
-if(!empty($_GET['offset'])){
-   $offset = $_GET['offset'];
-   $offset = intval($offset);
-  
-   
+if(empty($offset)){
+    $offset = 0;
 }
-$limitAmount = 4;
+
+if(empty($limitAmount)){
+    $limitAmount = 4;
+}
+
 
 try {
     $query = "SELECT * FROM houses WHERE (:zip = '' OR zip=:zip) AND (:min = '' OR price >= :min) AND (:max = '' OR price <= :max) 
@@ -36,8 +36,12 @@ try {
     $houses = $statement->fetchAll(PDO::FETCH_ASSOC);
     $statement->closeCursor();
 
-    $query = "SELECT COUNT(id) FROM houses";
+    $query = "SELECT COUNT(id) FROM houses WHERE (:zip = '' OR zip=:zip) AND (:min = '' OR price >= :min) AND (:max = '' OR price <= :max)";
     $statement = $db->prepare($query);
+    $statement->bindValue('zip', $zip);
+    $statement->bindValue('min', $min);
+    $statement->bindValue('max', $max);
+    
     $statement->execute();
     $housesCount = $statement->fetchAll(PDO::FETCH_COLUMN);
     $statement->closeCursor();
