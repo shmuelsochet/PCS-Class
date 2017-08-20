@@ -66,7 +66,7 @@
 
             <h1>Delete a Book</h1>
             <ul class="list-unstyled list-inline">
-                <li><h2><a class="btn btn-danger" href="addBook.php">Delete a Book</a></h2></li>
+                <li><h2><a class="btn btn-primary" href="index.php">Book Store</a></h2></li>
             </ul>
         </div>
 
