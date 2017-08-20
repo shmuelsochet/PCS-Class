@@ -4,7 +4,10 @@
     if (! empty($houseId)) {
         try {
             $query = "SELECT * FROM houses WHERE id = :id";
-            $statement = $db->prepare($query);
+
+            $myDatabase = Database::getInstance();
+            
+            $statement = $myDatabase->getDb()->prepare($query);
             $statement->bindValue('id', $houseId);
             $statement->execute();
             $house = $statement->fetch(PDO::FETCH_ASSOC);

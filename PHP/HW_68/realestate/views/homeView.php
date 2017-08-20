@@ -38,7 +38,7 @@
                             <figcaption class="text-center">
                                 <h3 
                                     <?php if($house['price'] < 1500000) echo "class=\"cheap\""?>
-                                ><?= number_format($house['price'], 2) ?></h3>
+                                >$<?= number_format($house['price'], 2) ?></h3>
                                 <h4><?= $house['address'] ?></h4>
                                 <h5><?= "{$house['city']}, {$house['state']} {$house['zip']}"?></h5>
                             </figcaption>

@@ -1,5 +1,6 @@
 <?php
     function getTd($value, $houseId) {
+        
         $it = "<td><a href=\"index.php?action=details&houseId=$houseId\">$value</a></td>";
         return $it;
     }
@@ -36,7 +37,7 @@
                             <?= getTd($house['city'], $house['id']) ?>
                             <?= getTd($house['state'], $house['id']) ?>
                             <?= getTd($house['zip'], $house['id']) ?>
-                            <td><a href="houseDetailsController.php?houseId={$house['id']}"><img src= "<?= $house['picture'] ?>" alt="the house"/></a></td>
+                            <td><a href= <?= "index.php?action=details&houseId={$house['id']}" ?>><img src= "<?= $house['picture'] ?>" alt="the house"/></a></td>
                         </tr>
                         <?php endforeach ?>
                     </tbody>

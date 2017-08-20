@@ -22,6 +22,15 @@ switch($action) {
     case 'details':
         include 'controllers/houseDetailsController.php';
         exit;
+    case 'add':
+        include 'controllers/addHouseController.php';
+        exit;
+    case 'delete':
+        include 'controllers/deleteHouseController.php';
+        exit;
+    case 'update':
+        include 'controllers/updateHouseController.php';
+        exit;
     default:
         $error = "Dont know how to $action";
         include 'views/error.php';
