@@ -55,7 +55,7 @@ if(empty($limitAmount)){
 
 
 try {
-    if(($_SERVER['REQUEST_METHOD'] === "POST") ){
+    if(($_SERVER['REQUEST_METHOD'] === "POST") && empty($errors) ){
         
         $query =  "UPDATE houses SET price = :priceUpdate, address = :address, city = :city, state = :state, zip = :zipUpdate, picture = :picture, notes = :notes WHERE id = :idUpdate";
         

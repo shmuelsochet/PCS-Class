@@ -1,7 +1,8 @@
 <?php
 
-    //need to make sure picture is only chosen from correct folder. 
-    //check for numeric
+    //need to make sure picture is only chosen from correct folder. Done! Fix if same name but wrong directory. 
+    //check for numeric. Done! 
+    //Zip or State validation. Though there are Zips with letters (Canada) and states are also not exclusive to US. 
 
     $styles = "
     .house img {
@@ -36,7 +37,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="house" class="col-sm-offset-2 col-sm-2 control-label">Price</label>
+                        <label for="house" class="col-sm-offset-3 col-sm-2 control-label">Price</label>
                         <div class="col-sm-3">
                             <div class="input-group">
                             
@@ -49,7 +50,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="address" class="col-sm-offset-2 col-sm-2 control-label">Address</label>  
+                        <label for="address" class="col-sm-offset-3 col-sm-2 control-label">Address</label>  
                         <div class="col-sm-3">
                             <input type="text" class="form-control" name="address" id="address" placeholder="Address">
                         </div>                      
@@ -58,7 +59,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="city" class="col-sm-offset-2 col-sm-2 control-label">City</label>  
+                        <label for="city" class="col-sm-offset-3 col-sm-2 control-label">City</label>  
                         <div class="col-sm-3">
                             <input type="text" class="form-control" name="city" id="city" placeholder="City">
                         </div>                      
@@ -67,7 +68,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="state" class="col-sm-offset-2 col-sm-2 control-label">State</label>  
+                        <label for="state" class="col-sm-offset-3 col-sm-2 control-label">State</label>  
                         <div class="col-sm-3">
                             <input type="text" class="form-control" name="state" id="state" placeholder="State">
                         </div>                      
@@ -76,7 +77,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="zip" class="col-sm-offset-2 col-sm-2 control-label">Zip</label>  
+                        <label for="zip" class="col-sm-offset-3 col-sm-2 control-label">Zip</label>  
                         <div class="col-sm-3">
                             <input type="number" class="form-control" name="zip" id="zip" placeholder="Zip">
                         </div>                      
@@ -85,9 +86,9 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="picture" class="col-sm-offset-2 col-sm-2 control-label">Picture</label>  
+                        <label for="pictureFile" class="col-sm-offset-3 col-sm-2 control-label">Picture(jpg)</label>  
                         <div class="col-sm-3">
-                            <input type="file" class="form-control" name="picture" id="picture" accept="image/*">
+                            <input type="file" class="form-control" name="pictureFile" id="pictureFile" accept="image/*">
    
                         </div>                      
                     </div>
@@ -95,7 +96,17 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label for="notes" class="col-sm-offset-2 col-sm-2 control-label">Notes</label>  
+                        <label for="pictureURL" class="col-sm-offset-3 col-sm-2 control-label">Picture(URL)</label>  
+                        <div class="col-sm-3">
+                            <input type="url" class="form-control" name="pictureURL" id="pictureURL" placeholder="Picture(URL)">
+   
+                        </div>                      
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label for="notes" class="col-sm-offset-3 col-sm-2 control-label">Notes</label>  
                         <div class="col-sm-3">
                             <input type="text" class="form-control" name="notes" id="notes" placeholder="Notes">
                         </div>                      
@@ -107,7 +118,7 @@
                 <div class="form-group">
                     <div class="row">
             
-                        <label class="col-sm-offset-2 col-sm-2 control-label">You Submitted</label>
+                        <label class="col-sm-offset-3 col-sm-2 control-label">You Submitted</label>
                         <div class="col-sm-3 well text-center house">
                             <figure>
                                 <img src= <?=$picture ?> alt="picture of the house"/></br>
@@ -123,7 +134,7 @@
                          
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-offset-4 col-sm-8">
+                        <div class="col-sm-offset-5 col-sm-8">
                             <button type="submit" class="btn btn-primary">Add house</button>
                         </div>
                     </div>

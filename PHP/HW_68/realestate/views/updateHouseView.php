@@ -17,8 +17,9 @@
             width: 131.24px;
             height: 98px;
         }
-        input + button {
-            margin: 15px;
+
+        input + button, input + input {
+            margin: 15px 0 15px;
         }
     ";
     include 'top.php';
@@ -68,11 +69,14 @@
                                         <td>
                                             <input type="text" name="city" value="<?= $house['city'] ?>" class="form-control" id="city" >
                                             <input type="hidden" name="id" value="<?= $house['id'] ?>" class="form-control" id="id" >
-                                            <button type="submit" class="btn btn-success col-sm-offset-3">Edit</a>
+                                            <button type="submit" class="btn btn-success col-sm-offset-3">Edit</button>
                                         </td>
                                         <td><input type="text" name="state" value="<?= $house['state'] ?>" class="form-control" id="state" ></td>
                                         <td><input type="number" name="zip" value="<?= $house['zip'] ?>" class="form-control" id="zip" ></td>
-                                        <td><input type="file" name="picture" class="btn btn-default form-control" id="picture" ></td>
+                                        <td>
+                                            <input type="file" name="pictureFile" class="form-control" id="pictureFile" >
+                                            <input type="url" name="pictureURL" <?php if(substr($house['picture'],0,6) === "https:") echo "value=  {$house['picture']}"  ?> class="form-control" id="pictureURL" placeholder="Picture (URL)" />
+                                        </td>
                                         <td>
                                             <a href= <?= "index.php?action=details&houseId={$house['id']}" ?>><img src= "<?= $house['picture'] ?>" alt="the house"/></a>
                                         </td>
