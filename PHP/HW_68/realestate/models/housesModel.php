@@ -1,5 +1,6 @@
 <?php
 include 'utils/database.php';
+require 'house.php';
 
 if (empty($zip)) {
     $zip = '';
@@ -35,8 +36,15 @@ try {
     $statement->bindValue('offset', $offset, PDO::PARAM_INT);
     $statement->bindValue('limitAmount', $limitAmount, PDO::PARAM_INT );
     $statement->execute();
-    $houses = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //$houses = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $houseData = $statement->fetchAll();
     $statement->closeCursor();
+
+    $houses = [];
+    foreach($houseData as $data){
+        $houses[] = new House($data);
+    }
+
 
     $query = "SELECT COUNT(id) FROM houses WHERE (:zip = '' OR zip=:zip) AND (:min = '' OR price >= :min) AND (:max = '' OR price <= :max)";
     $statement = $myDatabase->getDb()->prepare($query);
@@ -46,7 +54,7 @@ try {
     
     $statement->execute();
     $housesCount = $statement->fetchAll(PDO::FETCH_COLUMN);
-    $statement->closeCursor();
+    
 
 } catch (PDOException $e) {
     $error = "Something went wrong " . $e->getMessage();

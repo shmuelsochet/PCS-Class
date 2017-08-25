@@ -32,12 +32,12 @@
                     <tbody>
                         <?php foreach($houses as $house) :?>
                         <tr class="house">
-                            <?= getTd(number_format($house['price'], 2), $house['id']) ?>
-                            <?= getTd($house['address'], $house['id']) ?>
-                            <?= getTd($house['city'], $house['id']) ?>
-                            <?= getTd($house['state'], $house['id']) ?>
-                            <?= getTd($house['zip'], $house['id']) ?>
-                            <td><a href= <?= "index.php?action=details&houseId={$house['id']}" ?>><img src= "<?= $house['picture'] ?>" alt="the house"/></a></td>
+                            <?= getTd(number_format($house->getPrice(), 2), $house->getId()) ?>
+                            <?= getTd($house->getAddress(), $house->getId()) ?>
+                            <?= getTd($house->getCity(), $house->getId()) ?>
+                            <?= getTd($house->getState(), $house->getId()) ?>
+                            <?= getTd($house->getZip(), $house->getId()) ?>
+                            <td><a href= <?= "index.php?action=details&houseId={$house->getId()}" ?>><img src= "<?= $house->getPicture() ?>" alt="the house"/></a></td>
                         </tr>
                         <?php endforeach ?>
                     </tbody>
