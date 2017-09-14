@@ -1,20 +1,4 @@
-<?php
 
-    include "cart.php";
-
-    $cart = new Cart();
-    if(!empty($_POST['item']) && !empty($_POST['quantity'])){
-        $cart->addItem($_POST['item'],$_POST['quantity']);
-    }
-  
-  
-    // if($_SERVER['REQUEST_METHOD']==="GET"){
-    //     print_r($cart->getItems());
-    // }
-    
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +15,7 @@
             <h1 class="text-center">Welcome to PCS!</h1>
         </div>
 
-        <form action="store.php" method="post">
+        <form action="index.php?action=add" method="post">
             <div class="form-group">
                 <label for="item">Example select</label>
                 <select class="form-control" id="item" name="item">
@@ -54,7 +38,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Add to Cart</button>
-                <a href="viewCart.php?clear=false" class="btn btn-primary">Cart</a>
+                <a href="index.php?action=viewCart&clear=false" class="btn btn-primary">Cart</a>
             </div>
         
         </form>

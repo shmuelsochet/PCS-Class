@@ -5,7 +5,6 @@
         $cart = new Cart();
         $cart = $_SESSION['cart'];
         session_destroy();
-        print("hello");
     }else{
         include "cart.php";
         $cart = new Cart();
@@ -30,14 +29,20 @@
     <div class="container">
         <div class="jumbotron text-center">
             <h1>Welcome to PCS!</h1>
-            <a href="store.php" class="btn btn-primary">Continue Shopping</a>
-            <a href="viewCart.php?clear=true" class="btn btn-primary">Clear</a>
+            <a href="index.php?action=store" class="btn btn-primary">Continue Shopping</a>
+            <a href="index.php?action=viewCart&clear=true" class="btn btn-primary">Clear</a>
         </div>
-        <div>
+        <div class="text-center">
 
-            <?php if(!empty($_GET['clear']) && $_GET['clear'] ==="false") : foreach($cart as $key=>$value):?>
-            <h1 class="text-center"><?= "Item: " . $key. " -". " Quantity: " . $value ?> </h1>
-            <?php endforeach ; else : /*foreach($cart as $key=>$value):*/ ?>
+            <?php if(!empty($_GET['clear']) && $_GET['clear'] ==="false") :if(!empty($cart)): foreach($cart as $key=>$value):?>
+            
+            <h1 class="text-center"><?= "Item: " . $key. " -". " Quantity: " . $value  ?></h1> 
+            <a href="index.php?action=remove&item=<?=$key ?>">Remove</a>
+            <?php endforeach; else: ?>
+            <h1 class="text-center"><?= "You're cart is empty!" ?> </h1>
+            <?php endif ?>
+            
+            <?php  else : /*foreach($cart as $key=>$value):*/ ?>
             <h1 class="text-center"><?= "You cleared your cart" /*. "Item: " . $key. " -". " Quantity: " . $value*/ ?> </h1>
             <?php /* endforeach;*/ endif ?>
                     

@@ -24,7 +24,7 @@
                     $statement->closeCursor();               
 
             }catch(PDOException $ex){
-                    die("Something went wrong" . $ex ->getMessage());
+                    $error = "Something went wrong" . $ex ->getMessage();
             }
     }else{
             $errors[] = "You must submit a valid price, address, city, state, zip, and picture.";

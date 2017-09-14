@@ -24,10 +24,21 @@ if(empty($limitAmount)){
 
 
 try {
+    $myDatabase = Database::getInstance();
+    if(!empty($_GET['delete']) ){
+        
+        $query = "DELETE FROM houses WHERE id = :id";
+
+        $statement = $myDatabase->getDb()->prepare($query);
+        $statement->bindValue('id', $_GET['delete']);
+        $statement->execute();
+        $statement->closeCursor();
+    }
+    
     $query = "SELECT * FROM houses WHERE (:zip = '' OR zip=:zip) AND (:min = '' OR price >= :min) AND (:max = '' OR price <= :max) 
     LIMIT :offset , :limitAmount ";
 
-    $myDatabase = Database::getInstance();
+    
 
     $statement = $myDatabase->getDb()->prepare($query);
     $statement->bindValue('zip', $zip);

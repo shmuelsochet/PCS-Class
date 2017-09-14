@@ -21,6 +21,16 @@ class Cart{
             
         }
 
+        public function removeItem($item){
+            unset($_SESSION['cart'][$item]);
+        }
+
+        //Stephen used this to clear bec you only have to blow away the cart and not the whole session like I did with 
+        //session destroy
+        public function clear(){
+            $_SESSION['cart'] = [];
+        }
+
         public function getItems(){
     
             return $_SESSION['cart'];
