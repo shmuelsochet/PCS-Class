@@ -13,7 +13,7 @@
 	}
 	.menubg{
 		
-		background-image:url(images/menubg.png);
+		background-image:url(../../resources/images/menubg.png);
 		
 		background-clip:border-box;
 	}
@@ -61,7 +61,7 @@
 		height:200px;
 	}
 	.background{
-		background-image:url(images/eatingPlace.png);
+		background-image:url(../../resources/images/eatingPlace.png);
 		background-size:cover;
 		background-clip:border-box;
 		box-shadow: 0 0 8px 8px rgb(242, 67, 51) inset;	

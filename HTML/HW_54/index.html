@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="estuff.css">
     <title>Document</title>
 </head>
+
 <body>
-     <header>
+    <header>
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container"> 
+            <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#links" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -22,54 +24,62 @@
                     </button>
                     <a class="navbar-brand" href="#">ESTUFF</a>
                 </div>
-                <div class="collapse navbar-collapse" id="links" >
+                <div class="collapse navbar-collapse" id="links">
                     <ul class="nav navbar-nav">
-                        <li><a    href="#products">Products</a></li>
-                        <li><a    href="#signUp">Sign Up</a></li>
-                        <li><a   href="#financials">Financials</a></li>
-                        <li><a    href="#aboutUs">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#signUp">Sign Up</a></li>
+                        <li><a href="#financials">Financials</a></li>
+                        <li><a href="#aboutUs">About Us</a></li>
                     </ul>
-                </div>     
+                </div>
             </div>
         </nav>
     </header>
     <header class="container">
-        <div class="jumbotron text-center">            
+        <div class="jumbotron text-center">
             <h1 class="text-uppercase">estuff</h1>
             <h2>A <em>PCS</em> company</h2>
         </div>
     </header>
 
-    <div id="products" class="container padding">        
+    <div id="products" class="container padding">
         <section>
             <h2>Products</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quidem eius fugit animi, voluptate quo neque consequatur dolores, rerum perspiciatis suscipit odio, adipisci perferendis maxime vel saepe quisquam recusandae fuga!</p>       
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quidem eius fugit animi, voluptate quo neque
+                consequatur dolores, rerum perspiciatis suscipit odio, adipisci perferendis maxime vel saepe quisquam recusandae
+                fuga!</p>
         </section>
     </div>
-    
+
     <div class="container">
         <div class="row">
             <section class="col-md-4 col-md-12 verticalBar">
                 <h3 class="text-center">Computers</h3>
-                <img class="img-responsive center-block img"  src="../../Images/macworld.jpg" alt="mac presentation">
-                <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo corrupti</p>
+                <img class="img-responsive center-block img" src="../../resources/images/macworld.jpg" alt="mac presentation">
+                <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui
+                    a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo
+                    corrupti</p>
             </section>
             <section class="col-md-4 col-sm-12 verticalBar">
                 <h3 class="text-center">Choirs</h3>
-                <video class="img-responsive img" preload="metadata" poster="../../Images/shira.png" controls>
-                    <source src="../../Video/El_Hanaar_Hazeh.mp4"/>
+                <video class="img-responsive img" preload="metadata" poster="../../resources/images/shira.png" controls>
+                    <source src="../../resources/video/El_Hanaar_Hazeh.mp4" />
                 </video>
-                <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo corrupti</p>       
+                <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui
+                    a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo
+                    corrupti</p>
             </section>
             <section class="col-md-4 col-sm-12">
                 <h3 class="text-center">Candy</h3>
-                <img class="img-responsive img" src="../../Images/candy.png" alt="candy">
-                <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo corrupti</p>       
+                <img class="img-responsive img" src="../../resources/images/candy.png" alt="candy">
+                <p class="text-justify productsP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere reiciendis officiis pariatur, eaque qui
+                    a inventore quaerat illum quod eos animi ipsa temporibus exercitationem architecto praesentium explicabo
+                    corrupti</p>
             </section>
         </div>
     </div>
 
-    
+
     <div class="container padding">
         <section id="signUp" class="jumbotron text-center padding">
             <h2>Sign Me Up!</h2>
@@ -80,28 +90,28 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="email">Email</label>
-                    <input class="form-control" type="email" id="email" name="email" placeholder="Your email" required/>                   
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Your email" required/>
                 </div>
                 <div class="form-group">
-                    <input class="btn" type="submit" value="Sign me up!"/>
+                    <input class="btn" type="submit" value="Sign me up!" />
                 </div>
             </form>
 
             <form class="visible-sm form-horizontal" method="post" action="processOrder.php">
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="name">Name</label>  
-                    <div class="col-sm-8">               
+                    <label class="col-sm-2 control-label" for="name">Name</label>
+                    <div class="col-sm-8">
                         <input class="form-control" type="text" id="name" name="name" placeholder="Your name" required/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="email">Email</label>
                     <div class="col-sm-8">
-                        <input class="col-sm-10 form-control" type="email" id="email" name="email" placeholder="Your email" required/>                   
+                        <input class="col-sm-10 form-control" type="email" id="email" name="email" placeholder="Your email" required/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input class="btn" type="submit" value="Sign me up!"/>
+                    <input class="btn" type="submit" value="Sign me up!" />
                 </div>
             </form>
         </section>
@@ -111,12 +121,21 @@
     <div class="container">
         <section id="financials" class="fixLink padding">
             <h2>Financials</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse tenetur molestiae facere sequi eligendi dolore sint, distinctio vero sed cumque aperiam ad rem amet porro culpa, illum consectetur nulla minus. Mollitia aspernatur illum impedit, delectus expedita dolores, tempore sapiente rem, perspiciatis ratione praesentium molestias, nesciunt debitis officiis quo! Vel laudantium, praesentium dolor eligendi ad veritatis sequi rem, aliquam quisquam rerum sit aliquid nam similique necessitatibus nostrum totam excepturi nihil reprehenderit, iste incidunt amet magnam adipisci. Voluptas harum eveniet ipsa dolore facere consequuntur distinctio, sed doloribus commodi magni accusantium vero odio libero, consectetur nesciunt illum, impedit quisquam incidunt! Tenetur, hic!</p>
-            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse tenetur molestiae facere sequi eligendi dolore
+                sint, distinctio vero sed cumque aperiam ad rem amet porro culpa, illum consectetur nulla minus. Mollitia
+                aspernatur illum impedit, delectus expedita dolores, tempore sapiente rem, perspiciatis ratione praesentium
+                molestias, nesciunt debitis officiis quo! Vel laudantium, praesentium dolor eligendi ad veritatis sequi rem,
+                aliquam quisquam rerum sit aliquid nam similique necessitatibus nostrum totam excepturi nihil reprehenderit,
+                iste incidunt amet magnam adipisci. Voluptas harum eveniet ipsa dolore facere consequuntur distinctio, sed
+                doloribus commodi magni accusantium vero odio libero, consectetur nesciunt illum, impedit quisquam incidunt!
+                Tenetur, hic!</p>
+
         </section>
         <section class="table-responsive">
             <table class="table table-bordered table-striped table-hover" id="countit">
-                <caption class="text-center"><h3>Profits - By Quarter</h3></caption>
+                <caption class="text-center">
+                    <h3>Profits - By Quarter</h3>
+                </caption>
                 <thead>
                     <tr class="text-center">
                         <th class="text-center">Year</th>
@@ -135,7 +154,7 @@
                         <td class="text-right">$<span class="count-me1">1236566.98</span></td>
                         <td class="text-right">$<span class="count-me1">1368546.32</span></td>
                         <td class="total text-right text-danger" id="myRow1"></td>
-                        <!--<td class="total">$5050934.29</td>-->                            
+                        <!--<td class="total">$5050934.29</td>-->
                     </tr>
                     <tr>
                         <th class="text-center">2013</th>
@@ -144,7 +163,7 @@
                         <td class="text-right">$<span class="count-me2">1365568.54</span></td>
                         <td class="text-right">$<span class="count-me2">1545435.11</span></td>
                         <td class="total text-right text-danger" id="myRow2"></td>
-                        <!--<td  class="total">$5623344.75</span></td>-->           
+                        <!--<td  class="total">$5623344.75</span></td>-->
                     </tr>
                     <tr>
                         <th class="text-center">2014</th>
@@ -153,7 +172,7 @@
                         <td class="text-right">$<span class="count-me3">1645456.32</span></td>
                         <td class="text-right">$<span class="count-me3">1789690.35</span></td>
                         <td class="total text-right text-danger" id="myRow3"></td>
-                        <!--<td class="total">$6545657.88</span></td>-->             
+                        <!--<td class="total">$6545657.88</span></td>-->
                     </tr>
                     <tr>
                         <th class="text-center">2015</th>
@@ -162,14 +181,14 @@
                         <td class="count-me4 text-right">NA</td>
                         <td class="count-me4 text-right">NA</td>
                         <td class="total text-right text-danger" id="myRow4"></td>
-                        <!--<td class="total">$3654654.93</td>-->             
+                        <!--<td class="total">$3654654.93</td>-->
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <th class="text-right" colspan="5">Total</th>
                         <td class="total text-right text-danger" id="myRow5"></td>
-                        <!--<td class="total">$20978798.85</td>-->              
+                        <!--<td class="total">$20978798.85</td>-->
                     </tr>
                 </tfoot>
             </table>
@@ -177,43 +196,112 @@
     </div>
 
     <script type="text/javascript">
-            var tds = document.getElementById('countit').getElementsByTagName('span');
-            var sum1 = 0;
-			var sum2 = 0;
-			var sum3 = 0;
-			var sum4 = 0;
-            for(var i = 0; i < tds.length; i ++) {
-                if(tds[i].className == 'count-me1') {
-                    sum1 += isNaN(tds[i].innerHTML) ? 0 : parseFloat((tds[i].innerHTML));
-                }
-				if(tds[i].className == 'count-me2') {
-                    sum2 += isNaN(tds[i].innerHTML) ? 0 : parseFloat(tds[i].innerHTML);
-                }
-				if(tds[i].className == 'count-me3') {
-                    sum3 += isNaN(tds[i].innerHTML) ? 0 : parseFloat(tds[i].innerHTML);
-                }
-				if(tds[i].className == 'count-me4') {
-                    sum4 += isNaN(tds[i].innerHTML) ? 0 : parseFloat(tds[i].innerHTML);
-                }
+        var tds = document.getElementById('countit').getElementsByTagName('span');
+        var sum1 = 0;
+        var sum2 = 0;
+        var sum3 = 0;
+        var sum4 = 0;
+        for (var i = 0; i < tds.length; i++) {
+            if (tds[i].className == 'count-me1') {
+                sum1 += isNaN(tds[i].innerHTML) ? 0 : parseFloat((tds[i].innerHTML));
             }
-            document.getElementById('myRow1').innerHTML += '$' + new Intl.NumberFormat().format(sum1.toFixed(2));
-            document.getElementById('myRow2').innerHTML += '$' + new Intl.NumberFormat().format(sum2.toFixed(2));
-            document.getElementById('myRow3').innerHTML += '$' + new Intl.NumberFormat().format(sum3.toFixed(2));
-            document.getElementById('myRow4').innerHTML += '$' + new Intl.NumberFormat().format(sum4.toFixed(2));
-            var sum5 = sum1 + sum2 + sum3 + sum4
-            document.getElementById('myRow5').innerHTML += '$' + new Intl.NumberFormat().format(sum5.toFixed(2));			
-        </script>    
-    
-    
-    
+            if (tds[i].className == 'count-me2') {
+                sum2 += isNaN(tds[i].innerHTML) ? 0 : parseFloat(tds[i].innerHTML);
+            }
+            if (tds[i].className == 'count-me3') {
+                sum3 += isNaN(tds[i].innerHTML) ? 0 : parseFloat(tds[i].innerHTML);
+            }
+            if (tds[i].className == 'count-me4') {
+                sum4 += isNaN(tds[i].innerHTML) ? 0 : parseFloat(tds[i].innerHTML);
+            }
+        }
+        document.getElementById('myRow1').innerHTML += '$' + new Intl.NumberFormat().format(sum1.toFixed(2));
+        document.getElementById('myRow2').innerHTML += '$' + new Intl.NumberFormat().format(sum2.toFixed(2));
+        document.getElementById('myRow3').innerHTML += '$' + new Intl.NumberFormat().format(sum3.toFixed(2));
+        document.getElementById('myRow4').innerHTML += '$' + new Intl.NumberFormat().format(sum4.toFixed(2));
+        var sum5 = sum1 + sum2 + sum3 + sum4
+        document.getElementById('myRow5').innerHTML += '$' + new Intl.NumberFormat().format(sum5.toFixed(2));
+    </script>
+
+
+
     <div class="container">
-        <article  id="aboutUs" class="fixLink padding">
+        <article id="aboutUs" class="fixLink padding">
             <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet voluptatum, cum eum temporibus neque sint! Vitae aliquam asperiores aut molestiae debitis numquam atque accusantium totam, vel officiis illum soluta omnis voluptatem dolorem voluptate, commodi facere explicabo ipsum ratione possimus provident. Tenetur quos blanditiis rem, modi quidem debitis obcaecati nemo. Doloribus pariatur numquam praesentium similique odit aperiam neque dicta, ipsa totam quo, necessitatibus voluptatem. In fuga nihil laborum voluptatum fugit, expedita deserunt ex alias numquam similique optio ab suscipit incidunt aut molestias illum labore earum commodi quidem dicta pariatur! Natus dignissimos sunt, deserunt? Praesentium, minus vero aperiam animi tenetur optio voluptas aliquam quia qui assumenda aut voluptatibus sint veritatis necessitatibus vitae repudiandae. Necessitatibus in quo fugit dicta ut sapiente sint laboriosam adipisci nostrum facere, cumque ipsa delectus enim saepe vel quae blanditiis ducimus nesciunt eos. Esse aliquam quam, itaque odio perspiciatis similique. A corrupti facere, temporibus dolorem fugit, fuga laudantium delectus voluptatem eos consequuntur sunt saepe animi alias expedita architecto nam quaerat incidunt maiores et recusandae doloremque tenetur harum corporis ratione. Aliquam sed possimus labore esse. Quia possimus inventore totam ad ex atque repellat voluptates obcaecati, veniam molestias ducimus doloribus laudantium hic a sequi praesentium ipsum modi unde tempora nemo id ut! Ducimus voluptas itaque aperiam adipisci veritatis modi, sapiente facilis molestiae porro odit, non. Amet debitis et aliquam, tenetur consectetur exercitationem id eius rem a possimus consequuntur facilis quibusdam accusamus, maiores. Quisquam, atque. Sit modi iure nemo tempore pariatur reiciendis amet soluta eum laboriosam, quos fuga ex sequi saepe ab illo quaerat mollitia beatae excepturi optio totam temporibus aliquid dicta sint tenetur. Numquam sequi, ea quo quis ducimus dolorum iusto, alias cum ab quibusdam tenetur, autem ut. Reiciendis ut, voluptate, saepe dolorem nemo ex aliquid enim provident in deleniti impedit culpa eligendi sunt itaque ab sequi quidem fuga necessitatibus incidunt deserunt quod. Ipsam rerum hic qui nisi, unde veritatis temporibus totam, placeat a fugit omnis. Quam vero nostrum culpa error animi rerum numquam facilis sequi deserunt voluptatem natus vitae quae harum quasi ratione pariatur soluta ea dicta, ducimus veritatis illum. Veritatis nulla eius quasi id, expedita ipsa veniam. Odio ratione vitae hic similique aut nobis! Eveniet facilis placeat in repellendus dignissimos nulla optio quia, aperiam nostrum ex quidem, tenetur inventore! Aperiam impedit beatae, deleniti est sequi eligendi eaque rem pariatur consectetur. Pariatur saepe optio voluptatum veniam similique non assumenda, doloribus soluta repellendus? Esse illo adipisci reprehenderit nam suscipit fugit nostrum hic accusantium! Corrupti est eveniet omnis quaerat vero repellendus assumenda voluptates, sit repellat! Perferendis qui ducimus dolore, quae ipsa id illum fugiat? Minus obcaecati quaerat dolore blanditiis voluptate autem sapiente nam, in aperiam beatae? Consequuntur quisquam quos deserunt at beatae voluptate rerum, numquam accusamus sint iste fugiat tempora, saepe dolores obcaecati, ratione reiciendis quae laboriosam? Ex voluptatem, perferendis repellat eaque sint, dolorem doloribus dolores accusantium a rerum quo ab similique enim? Itaque dolorem voluptatem ratione temporibus, quae! Veniam quam saepe sint ipsam error odio rem soluta culpa perspiciatis amet pariatur, cumque hic, adipisci nesciunt, eum beatae labore molestias ipsa debitis sunt voluptatem omnis consequuntur dolorum possimus id! Ut sequi possimus culpa accusamus maiores repellat nam ducimus ab, numquam, molestiae itaque iusto doloremque aperiam quod illo cum neque ipsa expedita. Architecto facere perferendis officia pariatur cupiditate totam quia at officiis quibusdam obcaecati dignissimos similique nostrum iure veniam libero, voluptas, sequi ad qui quo consectetur dolorem consequuntur laboriosam dicta. Explicabo eveniet labore atque voluptatem, delectus natus minima, sapiente, nulla modi illum aut porro dolore neque illo, quos saepe sint enim aperiam laboriosam consectetur. Earum molestias porro iusto laboriosam obcaecati harum veniam est voluptatem tenetur inventore praesentium totam iste, placeat temporibus, beatae magni sequi asperiores. Atque cumque illum repudiandae quo deserunt, adipisci voluptas ullam aliquid veritatis fugit odio suscipit nihil earum quasi tenetur similique officiis! Accusantium repellendus consectetur dicta neque officia. Ducimus distinctio doloremque, culpa, consequatur facere quasi? Praesentium neque consequuntur aut atque ducimus quam soluta quidem laudantium. Voluptatibus ea, quisquam hic odio odit nobis aut reiciendis quaerat consequatur? Laborum consequatur provident aspernatur ipsam illum, consequuntur quisquam, at minus nihil obcaecati, voluptate, totam quis atque. Perspiciatis inventore obcaecati consequatur incidunt, doloribus temporibus maxime nulla. Perspiciatis ut saepe sequi reprehenderit, laudantium ab veritatis doloribus facilis aliquid odio temporibus ipsam cum fugiat natus, necessitatibus voluptas autem repellendus accusantium error esse labore quaerat? Inventore soluta dolorem officia, magnam enim quasi esse cumque fugit, quos non tenetur nobis. Nam ipsam quos ducimus libero vel est iure natus labore tempore at et dolore, itaque recusandae. A repellat assumenda, temporibus itaque dolorem aliquam cupiditate dolorum cumque accusamus quod. Enim necessitatibus quisquam magnam corporis, laboriosam omnis rerum quibusdam deserunt dolorum! Sapiente blanditiis maxime nostrum aliquid iste harum ipsum commodi odit voluptate consequuntur quo, minima distinctio cumque eligendi ad aspernatur suscipit debitis nesciunt, alias reprehenderit adipisci. Voluptates deserunt culpa adipisci non explicabo molestiae blanditiis sed consequatur, assumenda fugit sequi in, veniam, inventore facilis reprehenderit earum libero corporis deleniti maxime consequuntur. Recusandae, ducimus, impedit. Tempore id eos, reiciendis deleniti qui. Recusandae eum iure expedita laboriosam molestias, enim facilis, doloremque ex accusantium similique tenetur qui perspiciatis excepturi vero error nemo porro! Odio accusamus similique praesentium tenetur eveniet. Fugiat doloremque deserunt nesciunt, voluptatibus autem maiores cum. Inventore consectetur maiores dicta laborum doloremque suscipit saepe vero eius laudantium itaque ex nihil natus nobis ipsum dolores maxime architecto provident accusantium sunt ratione dolor non, quibusdam unde at sit. Quae deserunt, atque, officiis iste sequi omnis quos similique voluptate! Alias, similique, at. Reiciendis autem dolores, recusandae, tempora molestiae corporis magni aut. Placeat voluptates ipsa sequi quibusdam ipsum ratione autem omnis dolorem voluptatem fuga deserunt libero nulla iure velit expedita voluptas debitis quod saepe, laudantium, aut beatae? Libero, vel, beatae? Culpa odit libero quam laudantium sunt nam quos, doloremque, earum. Fugiat soluta eius rerum facilis hic voluptates cumque dolore a magni, voluptas nostrum ipsam quam in dicta, recusandae aperiam nobis mollitia magnam ea placeat doloremque velit ab neque quo! Quod, facere. Doloribus eligendi quibusdam corporis iusto placeat, modi velit sequi laborum odit tempora dolores id, aliquid quis repellendus neque quaerat libero impedit harum a sed veniam provident quisquam!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet voluptatum, cum eum temporibus neque sint! Vitae
+                aliquam asperiores aut molestiae debitis numquam atque accusantium totam, vel officiis illum soluta omnis
+                voluptatem dolorem voluptate, commodi facere explicabo ipsum ratione possimus provident. Tenetur quos blanditiis
+                rem, modi quidem debitis obcaecati nemo. Doloribus pariatur numquam praesentium similique odit aperiam neque
+                dicta, ipsa totam quo, necessitatibus voluptatem. In fuga nihil laborum voluptatum fugit, expedita deserunt
+                ex alias numquam similique optio ab suscipit incidunt aut molestias illum labore earum commodi quidem dicta
+                pariatur! Natus dignissimos sunt, deserunt? Praesentium, minus vero aperiam animi tenetur optio voluptas
+                aliquam quia qui assumenda aut voluptatibus sint veritatis necessitatibus vitae repudiandae. Necessitatibus
+                in quo fugit dicta ut sapiente sint laboriosam adipisci nostrum facere, cumque ipsa delectus enim saepe vel
+                quae blanditiis ducimus nesciunt eos. Esse aliquam quam, itaque odio perspiciatis similique. A corrupti facere,
+                temporibus dolorem fugit, fuga laudantium delectus voluptatem eos consequuntur sunt saepe animi alias expedita
+                architecto nam quaerat incidunt maiores et recusandae doloremque tenetur harum corporis ratione. Aliquam
+                sed possimus labore esse. Quia possimus inventore totam ad ex atque repellat voluptates obcaecati, veniam
+                molestias ducimus doloribus laudantium hic a sequi praesentium ipsum modi unde tempora nemo id ut! Ducimus
+                voluptas itaque aperiam adipisci veritatis modi, sapiente facilis molestiae porro odit, non. Amet debitis
+                et aliquam, tenetur consectetur exercitationem id eius rem a possimus consequuntur facilis quibusdam accusamus,
+                maiores. Quisquam, atque. Sit modi iure nemo tempore pariatur reiciendis amet soluta eum laboriosam, quos
+                fuga ex sequi saepe ab illo quaerat mollitia beatae excepturi optio totam temporibus aliquid dicta sint tenetur.
+                Numquam sequi, ea quo quis ducimus dolorum iusto, alias cum ab quibusdam tenetur, autem ut. Reiciendis ut,
+                voluptate, saepe dolorem nemo ex aliquid enim provident in deleniti impedit culpa eligendi sunt itaque ab
+                sequi quidem fuga necessitatibus incidunt deserunt quod. Ipsam rerum hic qui nisi, unde veritatis temporibus
+                totam, placeat a fugit omnis. Quam vero nostrum culpa error animi rerum numquam facilis sequi deserunt voluptatem
+                natus vitae quae harum quasi ratione pariatur soluta ea dicta, ducimus veritatis illum. Veritatis nulla eius
+                quasi id, expedita ipsa veniam. Odio ratione vitae hic similique aut nobis! Eveniet facilis placeat in repellendus
+                dignissimos nulla optio quia, aperiam nostrum ex quidem, tenetur inventore! Aperiam impedit beatae, deleniti
+                est sequi eligendi eaque rem pariatur consectetur. Pariatur saepe optio voluptatum veniam similique non assumenda,
+                doloribus soluta repellendus? Esse illo adipisci reprehenderit nam suscipit fugit nostrum hic accusantium!
+                Corrupti est eveniet omnis quaerat vero repellendus assumenda voluptates, sit repellat! Perferendis qui ducimus
+                dolore, quae ipsa id illum fugiat? Minus obcaecati quaerat dolore blanditiis voluptate autem sapiente nam,
+                in aperiam beatae? Consequuntur quisquam quos deserunt at beatae voluptate rerum, numquam accusamus sint
+                iste fugiat tempora, saepe dolores obcaecati, ratione reiciendis quae laboriosam? Ex voluptatem, perferendis
+                repellat eaque sint, dolorem doloribus dolores accusantium a rerum quo ab similique enim? Itaque dolorem
+                voluptatem ratione temporibus, quae! Veniam quam saepe sint ipsam error odio rem soluta culpa perspiciatis
+                amet pariatur, cumque hic, adipisci nesciunt, eum beatae labore molestias ipsa debitis sunt voluptatem omnis
+                consequuntur dolorum possimus id! Ut sequi possimus culpa accusamus maiores repellat nam ducimus ab, numquam,
+                molestiae itaque iusto doloremque aperiam quod illo cum neque ipsa expedita. Architecto facere perferendis
+                officia pariatur cupiditate totam quia at officiis quibusdam obcaecati dignissimos similique nostrum iure
+                veniam libero, voluptas, sequi ad qui quo consectetur dolorem consequuntur laboriosam dicta. Explicabo eveniet
+                labore atque voluptatem, delectus natus minima, sapiente, nulla modi illum aut porro dolore neque illo, quos
+                saepe sint enim aperiam laboriosam consectetur. Earum molestias porro iusto laboriosam obcaecati harum veniam
+                est voluptatem tenetur inventore praesentium totam iste, placeat temporibus, beatae magni sequi asperiores.
+                Atque cumque illum repudiandae quo deserunt, adipisci voluptas ullam aliquid veritatis fugit odio suscipit
+                nihil earum quasi tenetur similique officiis! Accusantium repellendus consectetur dicta neque officia. Ducimus
+                distinctio doloremque, culpa, consequatur facere quasi? Praesentium neque consequuntur aut atque ducimus
+                quam soluta quidem laudantium. Voluptatibus ea, quisquam hic odio odit nobis aut reiciendis quaerat consequatur?
+                Laborum consequatur provident aspernatur ipsam illum, consequuntur quisquam, at minus nihil obcaecati, voluptate,
+                totam quis atque. Perspiciatis inventore obcaecati consequatur incidunt, doloribus temporibus maxime nulla.
+                Perspiciatis ut saepe sequi reprehenderit, laudantium ab veritatis doloribus facilis aliquid odio temporibus
+                ipsam cum fugiat natus, necessitatibus voluptas autem repellendus accusantium error esse labore quaerat?
+                Inventore soluta dolorem officia, magnam enim quasi esse cumque fugit, quos non tenetur nobis. Nam ipsam
+                quos ducimus libero vel est iure natus labore tempore at et dolore, itaque recusandae. A repellat assumenda,
+                temporibus itaque dolorem aliquam cupiditate dolorum cumque accusamus quod. Enim necessitatibus quisquam
+                magnam corporis, laboriosam omnis rerum quibusdam deserunt dolorum! Sapiente blanditiis maxime nostrum aliquid
+                iste harum ipsum commodi odit voluptate consequuntur quo, minima distinctio cumque eligendi ad aspernatur
+                suscipit debitis nesciunt, alias reprehenderit adipisci. Voluptates deserunt culpa adipisci non explicabo
+                molestiae blanditiis sed consequatur, assumenda fugit sequi in, veniam, inventore facilis reprehenderit earum
+                libero corporis deleniti maxime consequuntur. Recusandae, ducimus, impedit. Tempore id eos, reiciendis deleniti
+                qui. Recusandae eum iure expedita laboriosam molestias, enim facilis, doloremque ex accusantium similique
+                tenetur qui perspiciatis excepturi vero error nemo porro! Odio accusamus similique praesentium tenetur eveniet.
+                Fugiat doloremque deserunt nesciunt, voluptatibus autem maiores cum. Inventore consectetur maiores dicta
+                laborum doloremque suscipit saepe vero eius laudantium itaque ex nihil natus nobis ipsum dolores maxime architecto
+                provident accusantium sunt ratione dolor non, quibusdam unde at sit. Quae deserunt, atque, officiis iste
+                sequi omnis quos similique voluptate! Alias, similique, at. Reiciendis autem dolores, recusandae, tempora
+                molestiae corporis magni aut. Placeat voluptates ipsa sequi quibusdam ipsum ratione autem omnis dolorem voluptatem
+                fuga deserunt libero nulla iure velit expedita voluptas debitis quod saepe, laudantium, aut beatae? Libero,
+                vel, beatae? Culpa odit libero quam laudantium sunt nam quos, doloremque, earum. Fugiat soluta eius rerum
+                facilis hic voluptates cumque dolore a magni, voluptas nostrum ipsam quam in dicta, recusandae aperiam nobis
+                mollitia magnam ea placeat doloremque velit ab neque quo! Quod, facere. Doloribus eligendi quibusdam corporis
+                iusto placeat, modi velit sequi laborum odit tempora dolores id, aliquid quis repellendus neque quaerat libero
+                impedit harum a sed veniam provident quisquam!</p>
         </article>
     </div>
-   
-   
+
+
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container">
             <footer>
@@ -222,8 +310,9 @@
                 </div>
             </footer>
         </div>
-     </div>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script> 
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
+
 </html>
