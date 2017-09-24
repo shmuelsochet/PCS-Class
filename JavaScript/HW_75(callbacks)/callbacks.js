@@ -48,13 +48,12 @@ function onlyIf(array, test, action) {
         element = action(element);
         arrayWithAction.push(element);
     });
-
     return arrayWithAction;
 }
 
 var arr2 = [0, 2, 4, 6, -1];
-var a = onlyIf(arr2, test, action);
-console.log(a);
+var newArr = onlyIf(arr2, test, action);
+console.log(newArr);
 
 
 
