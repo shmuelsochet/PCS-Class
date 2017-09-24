@@ -51,9 +51,6 @@ function onlyIf(array, test, action) {
     return arrayWithAction;
 }
 
-var arr2 = [0, 2, 4, 6, -1];
-var newArr = onlyIf(arr2, test, action);
-console.log(newArr);
-
-
-
+var originalArr = [0, 2, 4, 6, -1];
+var arrWithOnlyIf = onlyIf(originalArr, test, action);
+console.log(arrWithOnlyIf);
