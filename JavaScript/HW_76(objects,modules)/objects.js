@@ -1,5 +1,6 @@
 
 //month name function
+//iife- immediately invoked function
 var monthName = (function () {
     'use strict';
 
@@ -8,7 +9,10 @@ var monthName = (function () {
         "October", "November", "December"
     ];
 
+    //you can write the function code here for a cleaner look 
+
     return {
+        // these are closures so they have access to parent environment
         getMonthName: function (number) {
             return months[number - 1];
         },
@@ -38,19 +42,27 @@ var interestCalculator = (function () {
 
         setInterestRate: function (rate) {
             interestRate = rate;
+            //may see poeple do this
+            return this;
         },
         setYears: function (yrs) {
             years = yrs;
+            return this;
         },
         calculateInterest: function (amount) {
             for (var i = 0; i < years; i++) {
-                amount += amount * interestRate;
+                amount += amount * (interestRate / 100);
             }
             return amount;
         },
     };
 }());
 
-console.log("interestCalculator.setInterestRate(.1)", interestCalculator.setInterestRate(.1),
+console.log("interestCalculator.setInterestRate(10)", interestCalculator.setInterestRate(10),
     "interestCalculator.setYears(30)", interestCalculator.setYears(30),
     "interestCalculator.calculateInterest(100)", interestCalculator.calculateInterest(100));
+
+//this is chaining which can be done because we returned the object (this)
+console.log("Total amount",
+    interestCalculator.setInterestRate(10).interestCalculator.setYears(30).calculateInterest(100));
+
