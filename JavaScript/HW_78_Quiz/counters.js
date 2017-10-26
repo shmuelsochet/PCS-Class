@@ -2,20 +2,29 @@ var myApp = myApp || {};
 
 myApp.counter = (function (module) {
     "use strict";
+    var numberOfCreatedCounters = 0;
+    module.createCounter = function () {
 
-    module.createCounter = function (module) {
+        numberOfCreatedCounters++;
         return {
+
             count: 0,
 
             getCount: function () {
-                return count;
+                return this.count;
             },
 
             increment: function () {
-                return ++count;
+                return ++this.count;
             }
         };
+    };
+    module.getNumberOfCreatedCounters = function () {
+
+        return numberOfCreatedCounters;
+
+    };
 
 
-        return module;
-    }(myApp.counter || {}));
+    return module;
+}(myApp.counter || {}));
