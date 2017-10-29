@@ -9,7 +9,8 @@ myApp.counter = (function (module) {
     };
 
     module.increment = function () {
-        return ++count;
+        count++;
+        return this;
     };
 
     return module;

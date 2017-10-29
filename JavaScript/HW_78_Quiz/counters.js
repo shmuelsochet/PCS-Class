@@ -1,6 +1,6 @@
 var myApp = myApp || {};
 
-myApp.counter = (function (module) {
+myApp.createCounters = (function (module) {
     "use strict";
     var numberOfCreatedCounters = 0;
     module.createCounter = function () {
@@ -27,4 +27,4 @@ myApp.counter = (function (module) {
 
 
     return module;
-}(myApp.counter || {}));
+}(myApp.createCounters || {}));
