@@ -1,6 +1,8 @@
 var myApp = myApp || {};
 
 var singleCounter = myApp.counter;
+var createCounter1 = myApp.createCounters.createCounter();
+var createCounter2 = myApp.createCounters.createCounter();
 
 console.log(singleCounter.increment()
     .increment()
@@ -12,9 +14,6 @@ console.log(singleCounter.increment()
     .increment()
     .increment()
     .increment());
-
-var createCounter1 = myApp.createCounters.createCounter();
-var createCounter2 = myApp.createCounters.createCounter();
 
 console.log(createCounter1.increment(),
     createCounter1.increment(),
