@@ -13,6 +13,9 @@ pcs.messagebox = (function () {
 
     var messageButton = getId('messageButton');
     var modalDiv;
+    var moveOverNextMsg = 0;
+    var msgBoxzIndex = 1;
+    var isModal = false;
 
     function modal() {
         modalDiv = createElement("div");
@@ -29,6 +32,8 @@ pcs.messagebox = (function () {
     }
 
     function show(msg) {
+
+        moveOverNextMsg += 50;
 
         var div = createElement("div");
         var span = createElement("span");
@@ -50,11 +55,14 @@ pcs.messagebox = (function () {
         div.style.position = 'absolute';
         div.style.left = '50%';
         div.style.top = '50%';
-        div.style.marginLeft = '-200px';
-        div.style.marginTop = '-50px';
+        div.style.marginLeft = '' + (-250 + moveOverNextMsg) + 'px';
+        div.style.marginTop = '' + (-100 + moveOverNextMsg) + 'px';
         div.style.boxSizing = 'border-box';
         div.style.display = 'inline-block';
-        div.style.zIndex = 50;
+        if (isModal) {
+            div.style.zIndex = 50;
+        }
+
 
 
         buttonDiv.style.position = 'absolute';
@@ -65,16 +73,30 @@ pcs.messagebox = (function () {
 
         okButton.addEventListener("click", function () {
             document.body.removeChild(div);
-            document.body.removeChild(modalDiv);
+            if (isModal) {
+                document.body.removeChild(modalDiv);
+                isModal = false;
+            }
+
+            moveOverNextMsg -= 50;
+        });
+
+        div.addEventListener('click', function () {
+
+            div.style.zIndex = 50 + msgBoxzIndex++;
         });
 
     }
 
     messageButton.addEventListener('click', function () {
-        show(getId('message').value);
+
         if (getId('checkbox').checked) {
+            isModal = true;
             modal();
         }
+        show(getId('message').value);
+
+
     });
 
     return {
