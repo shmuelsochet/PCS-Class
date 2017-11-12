@@ -3,6 +3,13 @@ var pcs = pcs || {};
 pcs.messagebox = (function () {
     "use strict";
 
+    var messageButton = getId('messageButton');
+    var modalDiv;
+    var moveOverNextMsg = 0;
+    var msgBoxzIndex = 1;
+    var isModal = false;
+
+
     function createElement(type) {
         return document.createElement(type);
     }
@@ -10,12 +17,6 @@ pcs.messagebox = (function () {
     function getId(id) {
         return document.getElementById(id);
     }
-
-    var messageButton = getId('messageButton');
-    var modalDiv;
-    var moveOverNextMsg = 0;
-    var msgBoxzIndex = 1;
-    var isModal = false;
 
     function modal() {
         modalDiv = createElement("div");
@@ -31,7 +32,7 @@ pcs.messagebox = (function () {
         modalDiv.style.zIndex = 25;
     }
 
-    function show(msg) {
+    function show(msg, buttons) {
 
         moveOverNextMsg += 50;
 
@@ -39,6 +40,13 @@ pcs.messagebox = (function () {
         var span = createElement("span");
         var buttonDiv = createElement("div");
         var okButton = createElement("button");
+        if (buttons) {
+            buttons.forEach(function (element) {
+                var button = createElement('button');
+                buttonDiv.appendChild(button);
+                button.innerHTML = element;
+            });
+        }
 
         span.innerHTML = msg;
         div.appendChild(span);
@@ -63,8 +71,6 @@ pcs.messagebox = (function () {
             div.style.zIndex = 50;
         }
 
-
-
         buttonDiv.style.position = 'absolute';
         buttonDiv.style.bottom = '6px';
         buttonDiv.style.textAlign = 'center';
@@ -86,6 +92,19 @@ pcs.messagebox = (function () {
             div.style.zIndex = 50 + msgBoxzIndex++;
         });
 
+        buttonDiv.addEventListener('click', function () {
+            whichButton(event, buttons);
+        });
+
+    }
+
+    function whichButton(event, buttons) {
+
+        buttons.forEach(function (element) {
+            if (event.target.innerHTML === element) {
+                console.log("The", element, "button was clicked");
+            }
+        });
     }
 
     messageButton.addEventListener('click', function () {
@@ -94,7 +113,8 @@ pcs.messagebox = (function () {
             isModal = true;
             modal();
         }
-        show(getId('message').value);
+        var buttons = ['Test', 'Cancel', 'Hello'];
+        show(getId('message').value, buttons);
 
 
     });
