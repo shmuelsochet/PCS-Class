@@ -22,6 +22,7 @@
         }
     });
 
+    // with array
     function setColor() {
         var array = [
             'blue',
@@ -54,12 +55,16 @@
 
     }
 
+
+    // with 255 colors    
     function setColor2() {
 
         var r = Math.floor(Math.random() * 256);
         var g = Math.floor(Math.random() * 256);
         var b = Math.floor(Math.random() * 256);
-        document.body.style.color = "rgb(" + r + "," + g + "," + b + ")";
+
+        var rgb = document.body.style.color = "rgb(" + r + "," + g + "," + b + ")";
+        console.log(rgb);
 
         var r2 = r;
         var g2 = g;
@@ -75,30 +80,54 @@
 
     }
 
+    function setColor3() {
 
+        var rLoop = 0;
+        var gLoop = rLoop++;
+        var bLoop = gLoop++;
 
-    //tried with looping colors couldn't get it to work, will go back later
-    // colors();
+        document.body.style.color = "rgb(" + rLoop + "," + rLoop + "," + rLoop + ")";
 
-    // function colors() {
+        var r2Loop = rLoop;
+        var g2Loop = gLoop;
+        var b2Loop = bLoop;
 
+        while (rLoop === r2Loop && gLoop === g2Loop && bLoop === b2Loop) {
+            r2Loop = Math.floor(Math.random() * 256);
+            g2Loop = Math.floor(Math.random() * 256);
+            b2Loop = Math.floor(Math.random() * 256);
+        }
 
-    //     for (let i = 0; i < 10; i++) {
-    //         for (let j = 0; j < 10; j++) {
-    //             for (let k = 0; k < 10; k++) {
-    //                 var id = setInterval(function () {
-    //                     var r = 0;
-    //                     var g = 0;
-    //                     var b = 0;
-    //                     var colors = '';
+        document.body.style.backgroundColor = "rgb(" + r2Loop + "," + g2Loop + "," + b2Loop + ")";
 
-    //                     var r2 = 0;
-    //                     var g2 = 0;
-    //                     var b2 = 0;
-    //                     var colors2 = '';
-    //                     r = i;
-    //                     g = j;
-    //                     b = k;
+    }
+
+    // with loop
+    // var r = -1;
+    // var g = 0;
+    // var b = 0;
+    // var increment = 25;
+
+    // setInterval(function () {
+    //     r++;
+    //     if (r > 255) {
+    //         r = 0;
+    //         //g++;
+    //         // or 
+    //         g += increment;
+    //     }
+    //     if (g > 255) {
+    //         g = 0;
+    //         //b++;
+    //         b += increment;
+    //     }
+    //     if (b > 255) {
+    //         b = 0;
+    //         // r++;
+    //     }
+    //     document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    //     console.log(document.body.style.backgroundColor);
+    // }, 1);
 
 
 }());

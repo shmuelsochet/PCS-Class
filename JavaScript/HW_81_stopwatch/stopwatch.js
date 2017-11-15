@@ -9,15 +9,17 @@
     var elapsedSec = 0;
     var elapsedMin = 0;
     var elapsedHr = 0;
-    var elapsedMilli = 0;
+    var elapsedMs = 0;
     var intervalId;
     var timerStarted = false;
     var containerDiv = createElement('div');
     var jumboTronDiv = createElement('div');
     var h1Title = createElement('h1');
     var buttonDiv = createElement('div');
+    var timeSpan = createElement('span');
     var h1StartTime = createElement('h1');
     var h2Time = createElement('h2');
+    var timeString;
 
     startStopButton.id = 'startStopButton';
     startStopButton.className = 'btn btn-success';
@@ -27,18 +29,18 @@
     resetButton.className = 'btn btn-primary';
     resetButton.innerHTML = 'Reset';
 
-    //var elapsedTimeInMilliSec;
+    //var elapsedTimeInMs;
 
     containerDiv.className = 'container';
     jumboTronDiv.className = 'jumbotron';
     h1Title.className = 'text-center';
     buttonDiv.className = 'container';
-    h1StartTime.className = 'text-center';
-    h2Time.className = 'text-center';
 
     h1Title.innerHTML = 'StopWatch';
-    h2Time.innerHTML = "Time: " + elapsedHr + ":" + elapsedMin + ":" + elapsedSec +
-        ":" + elapsedMilli;
+    timeString = appendZero(elapsedHr) + ":" + appendZero(elapsedMin) + ":" +
+        appendZero(elapsedSec) + ":" + appendZero(elapsedMs);
+
+    h2Time.innerHTML = timeString;
 
     document.body.appendChild(containerDiv);
     containerDiv.appendChild(jumboTronDiv);
@@ -47,7 +49,8 @@
     buttonDiv.appendChild(startStopButton);
     buttonDiv.appendChild(resetButton);
     buttonDiv.appendChild(h1StartTime);
-    buttonDiv.appendChild(h2Time);
+    buttonDiv.appendChild(timeSpan);
+    timeSpan.appendChild(h2Time);
 
 
     function createElement(type) {
@@ -59,21 +62,27 @@
         elapsedSec = 0;
         elapsedMin = 0;
         elapsedHr = 0;
-        elapsedMilli = 0;
+        elapsedMs = 0;
         startStopButton.innerHTML = startString;
         h1StartTime.innerHTML = '';
         h2Time.innerHTML = '';
         startStopButton.className = 'btn btn-success';
         timerStarted = false;
+        h2Time.innerHTML = timeString;
 
+    }
+    //use this to append zero
+    function appendZero(time) {
+        var zeroAppended = time < 10 ? "0" + time : time;
+        return zeroAppended;
     }
 
     function writeTimeToScreen() {
 
-        elapsedMilli++;
-        if (elapsedMilli === 100) {
+        elapsedMs++;
+        if (elapsedMs === 100) {
             elapsedSec++;
-            elapsedMilli = 0;
+            elapsedMs = 0;
         }
         if (elapsedSec === 60) {
             elapsedMin++;
@@ -83,8 +92,8 @@
             elapsedHr++;
             elapsedMin = 0;
         }
-        h2Time.innerHTML = "Time: " + elapsedHr + ":" + elapsedMin + ":" + elapsedSec +
-            ":" + elapsedMilli;
+        h2Time.innerHTML = appendZero(elapsedHr) + ":" + appendZero(elapsedMin) + ":" +
+            appendZero(elapsedSec) + ":" + appendZero(elapsedMs);
 
     }
 
@@ -103,9 +112,9 @@
 
         } else {
 
-            // elapsedTimeInMilliSec = new Date() - startTime;
-            // elapsedMilli = elapsedTimeInMilliSec % 1000;
-            // elapsedSec = Math.floor(elapsedTimeInMilliSec / 1000);
+            // elapsedTimeInMs = new Date() - startTime;
+            // elapsedMs = elapsedTimeInMs % 1000;
+            // elapsedSec = Math.floor(elapsedTimeInMs / 1000);
             // elapsedMin = Math.floor(elapsedSec / 60);
             // elapsedHr = Math.floor(elapsedMin / 60);
             clearInterval(intervalId);

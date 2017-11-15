@@ -8,13 +8,7 @@
         return document.getElementById(id);
     }
 
-    function addContact() {
-        var contact = {
-            firstName: document.getElementById('first').value,
-            lastName: document.getElementById('last').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-        };
+    function addContact(contact) {
 
         contacts.push(contact);
 
@@ -28,11 +22,44 @@
         var emailCell = row.insertCell();
         var phoneCell = row.insertCell();
 
-        firstNameCell.innerHTML = document.getElementById('first').value;
-        lastNameCell.innerHTML = document.getElementById('last').value;
-        emailCell.innerHTML = document.getElementById('email').value;
-        phoneCell.innerHTML = document.getElementById('phone').value;
+        firstNameCell.innerHTML = contact.firstName;
+        lastNameCell.innerHTML = contact.lastName;
+        emailCell.innerHTML = contact.email;
+        phoneCell.innerHTML = contact.phone;
     }
 
-    get("add").addEventListener("click", addContact);
+
+
+    var firstNameInput = get('first');
+    var lastNameInput = get('last');
+    var emailInput = get('email');
+    var phoneInput = get('phone');
+    var addContactForm = get('addContactForm');
+
+    function hideAddContactForm() {
+        addContactForm.style.display = 'none';
+        addContactForm.reset();
+    }
+
+    addContactForm.addEventListener("submit", function (event) {
+        var newContact = {
+            firstName: firstNameInput.value,
+            lastName: lastNameInput.value,
+            email: emailInput.value,
+            phone: phoneInput.value,
+        };
+        addContact(newContact);
+        hideAddContactForm();
+        event.preventDefault();
+    });
+
+    get('cancel').addEventListener('click', hideAddContactForm);
+
+    get("add").addEventListener("click", function () {
+        addContactForm.style.display = 'inline-block';
+
+
+    });
+
+
 }());
