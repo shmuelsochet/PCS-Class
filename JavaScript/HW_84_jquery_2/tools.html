@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #thing1 {
+            display: none;
+        }
+
+        #thing2 {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="theDonald">Donald Trump</h1>
+    <button id="dataTest"><h1>Data Test</h1></button>
+
+    <script src="tools.js"></script>
+    <script>
+        var dt = pcs("theDonald");
+        dt.css("color", "red");
+        dt.css("backgroundColor", "black");
+        dt.pulsate();
+
+        var dataTest = pcs('dataTest')
+
+            .click(function () {
+                var counter = (dataTest.data('clickCounter')) || 0;
+                dataTest.data('clickCounter', ++counter);
+                console.log(counter);
+            });
+    </script>
+</body>
+
+</html>
