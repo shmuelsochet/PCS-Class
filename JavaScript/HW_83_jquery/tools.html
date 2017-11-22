@@ -11,6 +11,17 @@
             width: 60%;
             margin: 0 auto;
         }
+        /* p {
+            display: none;
+        } */
+
+        #thing1 {
+            display: none;
+        }
+
+        #thing2 {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -30,6 +41,10 @@
             dolore temporibus vitae?
         </p>
 
+        <h2 id="thing1">Thing #1</h2>
+        <h2 id="thing2">Thing #2</h2>
+        <h2 id="thing3">Thing #3</h2>
+
 
     </div>
     <script src="tools.js"></script>
@@ -37,6 +52,7 @@
         function test(elem) {
             console.log("this is a callback from ", elem)
         }
+
         var dt = pcs.tools.wrap("theDonald");
         dt.setCss("color", "red");
         dt.setCss("backgroundColor", "black");
@@ -48,6 +64,7 @@
             .click(test)
             .hide()
             .show();
+
         var someHTML = pcs.tools.wrap('someHTML').hide();
 
         function getId(id) {
@@ -67,6 +84,25 @@
             }
 
         })
+
+
+
+        var thing1 = pcs.tools.wrap('thing1')
+            .hide()
+            .setCss("backgroundColor", "pink")
+            .click(function () {
+                thing1.hide();
+                thing2.show();
+                thing3.hide();
+            });
+        var thing2 = pcs.tools.wrap('thing2')
+            .setCss("backgroundColor", "purple")
+            .click(function () {
+                thing2.hide();
+                thing1.show();
+                thing3.show();
+            });
+        var thing3 = pcs.tools.wrap("thing3");
     </script>
 </body>
 

@@ -19,11 +19,15 @@ var pcs = (function () {
         return {
 
             css: function (property, value) {
+                // this is a problem since if he passes 0 then it will be a getter.
+                //so if arguments.length is less than 2 is better. If undefined is a problem where
+                // undefined itself was passed in.
                 if (value) {
                     setCss(elem, property, value);
                     return this;
                 } else {
                     return getComputedStyle(elem).getPropertyValue(property);
+                    //you can possibly pass in a callback to allow for chaining
                 }
 
             },

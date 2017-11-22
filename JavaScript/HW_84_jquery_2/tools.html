@@ -31,6 +31,9 @@
         var dataTest = pcs('dataTest')
 
             .click(function () {
+                //you can do dataTest.data('clickCounter', 0);
+                //also you can do befor the click do set data's clickCounter key's value to 0 by 
+                //doing .data('clickCounter', 0) outside the click.
                 var counter = (dataTest.data('clickCounter')) || 0;
                 dataTest.data('clickCounter', ++counter);
                 console.log(counter);

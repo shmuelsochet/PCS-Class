@@ -27,6 +27,11 @@ pcs.tools = (function () {
                     return this;
                 },
 
+                getCss: function (property) {
+                    getComputedStyle(elem).getPropertyValue(property);
+                    return this;
+                },
+
                 pulsate: function () {
                     var fontSize = 32,
                         i = 1,
@@ -49,8 +54,9 @@ pcs.tools = (function () {
                 },
 
                 click: function (callback) {
-                    elem.addEventListener('click', function () {
-                        callback(elem);
+                    // Shlomo said pass the even not the elem, since you get much more.
+                    elem.addEventListener('click', function (event) {
+                        callback(event);
                     });
 
                     return this;
@@ -59,7 +65,8 @@ pcs.tools = (function () {
                 hide: function () {
 
                     previousDisplay = elem.style.display;
-
+                    //you cant do this with this.css if you're called by the window then it calls the wrong this
+                    //when you use this then you're calling the objects setCss and not the module one
                     setCss(elem, 'display', 'none');
 
                     return this;
@@ -68,6 +75,7 @@ pcs.tools = (function () {
                 show: function () {
 
                     /* jshint -W030 */
+                    //use var newDisplay === . Also !== 'none' is more likely
                     previousDisplay === 'none' ? setCss(elem, 'display', '') :
                         setCss(elem, 'display', previousDisplay);
 
