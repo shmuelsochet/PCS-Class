@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        label {
+            display: inline-block;
+            width: 40px;
+        }
+
+        #addContactForm {
+            display: none;
+            background-color: lightblue;
+            padding: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 218px;
+            height: 112px;
+            margin-left: -109px;
+            margin-top: -56px
+        }
+
+        #add {
+            float: left;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 6px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="loading" id="loading" src="spinner.gif">
+    <button id="add">Add Contact</button>
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="noContacts">
+                <td colspan="4">No contacts</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="addContactForm">
+        <div>
+            <label for='first'>First: </label>
+            <input id='first' />
+        </div>
+        <div>
+            <label for='last'>Last: </label>
+            <input id='last' required />
+        </div>
+        <div>
+            <label for='email'>Email: </label>
+            <input type='email' id='email' />
+        </div>
+        <div>
+            <label for='phone'>Phone: </label>
+            <input type='number' id='phone' />
+        </div>
+
+        <div class="buttons">
+            <button id="ok">Ok</button>
+            <button type="button" id="cancel">Cancel</button>
+
+        </div>
+    </form>
+    <script src="/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="contacts.js"></script>
+</body>
+
+</html>
