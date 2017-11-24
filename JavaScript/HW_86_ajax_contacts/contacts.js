@@ -41,11 +41,13 @@
 
         spinner.show();
 
-        $.get('contacts.json', function (loadedData) {
+        $.getJSON('contacts.json', function (loadedData) {
             setTimeout(function () {
-                var jsonString = JSON.stringify(loadedData);
+                //var jsonString = JSON.stringify(loadedData);
 
-                jsObject = JSON.parse(jsonString);
+                //jsObject = JSON.parse(jsonString);
+
+                jsObject = loadedData;
 
                 addContact(jsObject);
 
