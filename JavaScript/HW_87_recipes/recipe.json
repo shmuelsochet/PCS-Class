@@ -1,0 +1,20 @@
+[
+    {
+        "name": "popcorn",
+        "ingredients": [
+            "corn",
+            "oil",
+            "salt"
+        ],
+        "picture": "https://www.organicfacts.net/wp-content/uploads/2013/06/Popcorn-700x525.jpg"
+    },
+    {
+        "name": "potatochips",
+        "ingredients": [
+            "potatoes",
+            "oil",
+            "salt"
+        ],
+        "picture": "https://sparkpeo.hs.llnwd.net/e1/resize/630m620/e2/guid/Spicy-Sweet-Potato-Chips/3dc6158f-d6f2-42be-bc97-22b1945d6275.jpg"
+    }
+]
