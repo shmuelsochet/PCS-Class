@@ -1,0 +1,17 @@
+[
+    {
+        "name": "toytruck",
+        "video": "http://www.vidsplay.com/wp-content/uploads/2017/05/toytruck.mp4?_=1",
+        "picture": "http://www.clipartool.com/wp-content/uploads/2016/05/toy-truck-clipart.jpg"
+    },
+    {
+        "name": "earth",
+        "video": "http://www.vidsplay.com/wp-content/uploads/2017/05/earth.mp4?_=1",
+        "picture": "http://www.clipartool.com/wp-content/uploads/2016/04/planet-earth-clip-art.png"
+    },
+    {
+        "name": "rain",
+        "video": "http://www.vidsplay.com/wp-content/uploads/2017/05/window.mp4?_=1",
+        "picture": "http://www.clipartool.com/wp-content/uploads/2016/04/rain-cloud-clipart-2.jpg"
+    }
+]
