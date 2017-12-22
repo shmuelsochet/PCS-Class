@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #sidebar {
+            float: left;
+            width: 25%;
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sidebar li {
+            cursor: pointer;
+        }
+
+        #sidebar li:hover {
+            color: red;
+        }
+
+        #sidebar li img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        #img {
+            width: 75%;
+            height: 575px;
+            display: none;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        <ul></ul>
+        <button id=left>Left</button>
+        <button id=right>Right</button>
+    </div>
+    <h1></h1>
+    <img id="img"></img>
+
+
+
+    <script src="/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="images.js"></script>
+</body>
+
+</html>
