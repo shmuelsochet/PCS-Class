@@ -41,6 +41,9 @@
         $.getJSON("recipe.php", function (data) {
             for (var i = 0; i < data.length; i++) {
                 if (data[i].name === input.val().toLowerCase()) {
+                    // h1.empty();
+                    //img.empty();
+                    ingredientsOl.empty();
                     h1.text(data[i].name.toUpperCase());
                     img.attr('src', data[i].picture);
 
@@ -50,14 +53,14 @@
                     theLi1.appendTo(ingredientsOl);
                     theLi2.appendTo(ingredientsOl);
                     theLi3.appendTo(ingredientsOl);
-                    break;
-                } else {
-                    body.append('No Recipe');
-
+                    return;
                 }
 
             }
-
+            h1.empty();
+            imgDiv.empty();
+            ingredientsOl.empty();
+            body.append('No Recipe');
 
             // data[i].ingredients.forEach(function (element) {
             //     var theLi = $("<li>" + element + "</li>");
