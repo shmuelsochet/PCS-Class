@@ -28,6 +28,7 @@
                 currentIndex = 0;
             }
             imageViewer.attr("src", imageList[currentIndex].url);
+            imageTitle.text(imageList[currentIndex].title);
             imageViewer.show();
 
         });
@@ -38,6 +39,7 @@
                 currentIndex = imageList.length - 1;
             }
             imageViewer.attr("src", imageList[currentIndex].url);
+            imageTitle.text(imageList[currentIndex].title);
             imageViewer.show();
 
         });
