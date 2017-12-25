@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap-4.0.0/css/bootstrap.css">
+    <title>Document</title>
+
+</head>
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body class="bg-inverse text-white">
+    <div class="container">
+
+        <div class="jumbotron">
+
+            <h1 class="text-center text-muted">
+                Kosher Food Products
+            </h1>
+
+        </div>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Name</th>
+                        <th>Flavor</th>
+                        <th>Calories</th>
+                        <th>Serving Size</th>
+                        <th>Fat</th>
+                        <th>Carbs</th>
+                        <th>Sugar</th>
+                        <th>Protein</th>
+                    </tr>
+                    <!-- <tr>
+                         <td>Food </td>
+                        <td>Name </td>
+                        <td>Flavor </td>
+                        <td>Calories </td>
+                        <td>Serving Size</td>
+                        <td>Fat </td>
+                        <td>Carbs </td>
+                        <td>Sugar </td>
+                        <td>Protien </td> 
+                    </tr> -->
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        /* global $ */
+        (function () {
+            "use strict";
+            $.getJSON('foods.php', function (foods) {
+                foods.forEach(function (element, index) {
+                    $("table thead").append("<tr class=" + index + "></tr > ")
+                    $("." + index).append("<td><img src=" + element.img + "></td>");
+                    $("." + index).append("<td>" + element.name + "</td>");
+                    $("." + index).append("<td>" + element.flavor + "</td>");
+                    $("." + index).append("<td>" + element.calories + "</td>");
+                    $("." + index).append("<td>" + element.serving_size_grams + "</td>");
+                    $("." + index).append("<td>" + element.total_fat_g + "</td>");
+                    $("." + index).append("<td>" + element.total_carbs_g + "</td>");
+                    $("." + index).append("<td>" + element.sugar_g + "</td>");
+                    $("." + index).append("<td>" + element.protein_grams + "</td>");
+                });
+
+                console.log(foods);
+            })
+                .fail(function (jqxhr) {
+                    console.log(jqxhr);
+                });
+
+
+        }());
+
+    </script>
+
+</body>
+
+</html>
