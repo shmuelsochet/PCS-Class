@@ -28,7 +28,12 @@
         </div>
 
         <div>
-            <table class="table">
+            <label for="search">Search</label>
+            <input id="search" name="search" />
+        </div>
+
+        <div>
+            <table id="table" class="table">
                 <thead>
                     <tr>
                         <th>Food</th>
@@ -61,34 +66,7 @@
     <script src="/jquery-3.2.1/jquery-3.2.1.min.js"></script>
     <script src="/bootstrap-4.0.0/js/bootstrap.min.js"></script>
 
-    <script>
-        /* global $ */
-        (function () {
-            "use strict";
-            $.getJSON('foods.php', function (foods) {
-                foods.forEach(function (element, index) {
-                    $("table thead").append("<tr class=" + index + "></tr > ")
-                    $("." + index).append("<td><img src=" + element.img + "></td>");
-                    $("." + index).append("<td>" + element.name + "</td>");
-                    $("." + index).append("<td>" + element.flavor + "</td>");
-                    $("." + index).append("<td>" + element.calories + "</td>");
-                    $("." + index).append("<td>" + element.serving_size_grams + "</td>");
-                    $("." + index).append("<td>" + element.total_fat_g + "</td>");
-                    $("." + index).append("<td>" + element.total_carbs_g + "</td>");
-                    $("." + index).append("<td>" + element.sugar_g + "</td>");
-                    $("." + index).append("<td>" + element.protein_grams + "</td>");
-                });
-
-                console.log(foods);
-            })
-                .fail(function (jqxhr) {
-                    console.log(jqxhr);
-                });
-
-
-        }());
-
-    </script>
+    <script src="foods.js"></script>
 
 </body>
 
