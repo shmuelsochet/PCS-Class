@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        html,
+        #map {
+            width: 75%;
+            height: 75%;
+        }
+
+        #sidebar {
+            float: left;
+            width: 25%;
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sidebar li {
+            cursor: pointer;
+        }
+
+        #sidebar li:hover {
+            color: red;
+        }
+
+        #sidebar li img {
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+    <div>
+        <input id="search" />
+        <button id="submitButton">Submit</button>
+    </div>
+    <div id="sidebar">
+        <ul></ul>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARMQDEwihcgxim9Gcq3Y7DXPB6h9CMt6A"></script>
+    <script src="/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="maps.js"></script>
+</body>
+
+</html>
