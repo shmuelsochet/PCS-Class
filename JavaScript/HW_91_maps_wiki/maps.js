@@ -25,7 +25,7 @@
 
 
     submitButton.click(function () {
-        $.getJSON("http://api.geonames.org/wikipediaSearch?q=" + searchBox.val() + "&maxRows=100&username=shmuels&type=json&callback=?",
+        $.getJSON("http://api.geonames.org/wikipediaSearch?q=" + searchBox.val() + "&maxRows=20&username=shmuels&type=json&callback=?",
             function (data) {
                 console.log(data);
                 if (isEmpty === false) {
@@ -53,7 +53,7 @@
                                 '<div>' +
                                 '<p><b>' + element.title + '.</b> ' + element.summary + '</p>' +
                                 '<p>Attribution: ' + element.title + ', <a target=_blank' +
-                                'href=https://' + element.wikipediaUrl + '>' + element.wikipediaUrl + '</a> ' +
+                                ' href=https://' + element.wikipediaUrl + '>' + element.wikipediaUrl + '</a> ' +
                                 '.</p>' +
                                 '</div>' +
                                 '</div>';
