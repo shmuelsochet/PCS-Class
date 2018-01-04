@@ -57,7 +57,7 @@ function initMap() {
     submitButton.click(function () {
         $.getJSON("http://api.geonames.org/wikipediaSearch?q=" + searchBox.val() + "&maxRows=20&username=shmuels&type=json&callback=?",
             function (data) {
-                console.log(data);
+
                 if (isEmpty === false) {
                     theList.empty();
 
@@ -76,9 +76,6 @@ function initMap() {
                                 animation: google.maps.Animation.DROP,
                                 title: element.title,
                                 label: labels[labelIndex++ % labels.length],
-                                
-
-
 
                             });
                             console.log(labels.length);
