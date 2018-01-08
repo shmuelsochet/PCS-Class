@@ -5,7 +5,6 @@
     var dragging,
         offset,
         body = $('body'),
-        colorPicker = $('#color'),
         zIndex = 0,
         partSelector = $('#test');
 
@@ -19,22 +18,10 @@
         dragging.removeClass("dragging");
         dragging = null;
     }).mousemove(function (event) {
-        event.preventDefault();
+        //event.preventDefault();
         if (dragging) {
             dragging.css({ top: event.clientY - offset.y, left: event.clientX - offset.x });
         }
-    });
-
-    $('#add').click(function () {
-        $('<div class="parts"><img src=resources/shoes.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/eyes.png>' + '</div>').appendTo(body).css({ "height": '50px', "width": '50px' });
-        $('<div class="parts"><img src=resources/nose.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/rightEar.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/leftEar.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/rightHand.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/leftHand.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/stash.png>' + '</div>').appendTo(body);
-        $('<div class="parts"><img src=resources/glasses.png>' + '</div>').appendTo(body);
     });
 
     partSelector.append($('<option value=resources/shoes.png>Shoes</option>'));
@@ -42,7 +29,7 @@
     partSelector.change(function () {
         var partSelected = partSelector.val();
 
-        $('<div class=parts><img src=' + partSelected + '></div>').appendTo(body);
+        $('<div class=parts><img class=part src=' + partSelected + '></div>').appendTo(body);
     });
 
     $.ajax({
@@ -50,7 +37,7 @@
         success: function (data) {
 
             $(data).find("td > a").each(function () {
-                var partFileName = $(this).attr("href")
+                var partFileName = $(this).attr("href");
                 // will loop through
                 if (partFileName.substr(-3) === 'png')
                     partSelector.append(($('<option value=resources/' + partFileName + '>' + partFileName.replace(/\.[^/.]+$/, "") + '</option>')));
@@ -61,10 +48,5 @@
             console.log(jqxhr);
         }
     });
-
-
-
-
-
 
 }());
