@@ -8,7 +8,9 @@
         colorPicker = document.getElementById('color'),
         amountOfAnts = document.getElementById('amount'),
         ants = [],
-        index = 0;
+        index = 0
+        //yOverBoard = 0 || canvas.
+        ;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -31,27 +33,40 @@
 
 
         move(color) {
-            //context.clearRect(this.x - 1, this.y - 1, 4, 4);
-            if (this.timesInThisDirection > 0) {
+
+            if (this.timesInThisDirection === 0 ||
+                (this.x + this.xDirection) > window.innerWidth ||
+                (this.x + this.xDirection) < 0 ||
+                (this.y + this.yDirection) > window.innerHeight ||
+                (this.y + this.yDirection) < 0) {
+
+                this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
+                do {
+                    this.xDirection = this.getRandomNumberBetween(-2, 2);
+                }
+                while ((this.xDirection + this.x) > window.innerWidth ||
+                    (this.xDirection + this.x) < 0);
+
+
+                do {
+                    this.yDirection = this.getRandomNumberBetween(-2, 2);
+
+                }
+                while ((this.yDirection + this.y) > window.innerHeight ||
+                    (this.yDirection + this.y) < 0);
+
+                this.x += this.xDirection;
+                this.y += this.yDirection;
+            }
+            else {
                 this.x += this.xDirection;
                 this.y += this.yDirection;
 
                 this.timesInThisDirection--;
             }
 
-            if (this.timesInThisDirection === 0) {
-
-                this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
-                this.xDirection = this.getRandomNumberBetween(-2, 2);
-                this.yDirection = this.getRandomNumberBetween(-2, 2);
-                this.x += this.xDirection;
-                this.y += this.yDirection;
-
-            }
-
             context.fillStyle = color;
             context.fillRect(this.x, this.y, 2, 2);
-
 
         }
 
