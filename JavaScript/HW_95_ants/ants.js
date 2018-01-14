@@ -7,7 +7,8 @@
         context = canvas.getContext('2d'),
         colorPicker = document.getElementById('color'),
         amountOfAnts = document.getElementById('amount'),
-        ants = [];
+        ants = [],
+        index = 0;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -15,8 +16,12 @@
     class Ant {
 
         constructor(color) {
+            this.number = index++;
             this.x = canvas.width / 2;
             this.y = canvas.height / 2;
+            this.yDirection = 0;
+            this.xDirection = 0;
+            this.timesInThisDirection = 0;
             this.color = color;
         }
 
@@ -27,12 +32,27 @@
 
         move(color) {
             //context.clearRect(this.x - 1, this.y - 1, 4, 4);
+            if (this.timesInThisDirection > 0) {
+                this.x += this.xDirection;
+                this.y += this.yDirection;
 
-            this.x += this.getRandomNumberBetween(-2, 2);
-            this.y += this.getRandomNumberBetween(-2, 2);
+                this.timesInThisDirection--;
+            }
+
+            if (this.timesInThisDirection === 0) {
+
+                this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
+                this.xDirection = this.getRandomNumberBetween(-2, 2);
+                this.yDirection = this.getRandomNumberBetween(-2, 2);
+                this.x += this.xDirection;
+                this.y += this.yDirection;
+
+            }
 
             context.fillStyle = color;
             context.fillRect(this.x, this.y, 2, 2);
+
+
         }
 
     }
@@ -51,7 +71,7 @@
         ant.move();
     }, 100);*/
 
-    for (var i = 0; i < 10000; i++) {
+    for (var i = 0; i < 100; i++) {
         ants.push(new Ant('black'));
     }
 
