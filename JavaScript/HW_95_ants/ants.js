@@ -8,9 +8,7 @@
         colorPicker = document.getElementById('color'),
         amountOfAnts = document.getElementById('amount'),
         ants = [],
-        index = 0
-        //yOverBoard = 0 || canvas.
-        ;
+        index = 0;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -35,16 +33,16 @@
         move(color) {
 
             if (this.timesInThisDirection === 0 ||
-                (this.x + this.xDirection) > window.innerWidth ||
+                (this.x + this.xDirection) >= canvas.width ||
                 (this.x + this.xDirection) < 0 ||
-                (this.y + this.yDirection) > window.innerHeight ||
+                (this.y + this.yDirection) >= canvas.height ||
                 (this.y + this.yDirection) < 0) {
 
                 this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
                 do {
                     this.xDirection = this.getRandomNumberBetween(-2, 2);
                 }
-                while ((this.xDirection + this.x) > window.innerWidth ||
+                while ((this.xDirection + this.x) >= canvas.width ||
                     (this.xDirection + this.x) < 0);
 
 
@@ -52,7 +50,7 @@
                     this.yDirection = this.getRandomNumberBetween(-2, 2);
 
                 }
-                while ((this.yDirection + this.y) > window.innerHeight ||
+                while ((this.yDirection + this.y) >= canvas.height ||
                     (this.yDirection + this.y) < 0);
 
                 this.x += this.xDirection;
@@ -78,19 +76,11 @@
 
         }
 
-        console.log(ants);
     });
 
-    /*var ant = new Ant();
-    setInterval(() => {
-        ant.move();
-    }, 100);*/
-
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 10000; i++) {
         ants.push(new Ant('black'));
     }
-
-    console.log(ants);
 
     setInterval(() => {
         context.clearRect(0, 0, canvas.width, canvas.height);
