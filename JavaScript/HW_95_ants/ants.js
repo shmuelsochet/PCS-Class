@@ -33,16 +33,16 @@
         move(color) {
 
             if (this.timesInThisDirection === 0 ||
-                (this.x + this.xDirection) >= canvas.width ||
+                (this.x + this.xDirection) >= canvas.width - 5 ||
                 (this.x + this.xDirection) < 0 ||
-                (this.y + this.yDirection) >= canvas.height ||
+                (this.y + this.yDirection) >= canvas.height - 5 ||
                 (this.y + this.yDirection) < 0) {
 
                 this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
                 do {
                     this.xDirection = this.getRandomNumberBetween(-2, 2);
                 }
-                while ((this.xDirection + this.x) >= canvas.width ||
+                while ((this.xDirection + this.x) >= canvas.width - 5 ||
                     (this.xDirection + this.x) < 0);
 
 
@@ -50,8 +50,8 @@
                     this.yDirection = this.getRandomNumberBetween(-2, 2);
 
                 }
-                while ((this.yDirection + this.y) >= canvas.height ||
-                    (this.yDirection + this.y) < 0);
+                while ((this.yDirection + this.y) >= canvas.height - 5 ||
+                (this.yDirection + this.y) < 0 || ((this.yDirection === 0) && (this.xDirection === 0)));
 
                 this.x += this.xDirection;
                 this.y += this.yDirection;

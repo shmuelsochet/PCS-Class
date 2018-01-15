@@ -38,7 +38,7 @@
 
             if (this.timesInThisDirection === 0) {
 
-                this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
+                //this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
 
                 this.xDirection = this.getRandomNumberBetween(-2, 2);
 
@@ -100,11 +100,6 @@
 
         console.log(ants);
     });
-
-    /*var ant = new Ant();
-    setInterval(() => {
-        ant.move();
-    }, 100);*/
 
     for (var i = 0; i < 1; i++) {
         ants.push(new Ant('black'));
