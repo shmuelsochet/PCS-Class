@@ -6,20 +6,23 @@
         addButton = document.getElementById("addButton"),
         context = canvas.getContext('2d'),
         colorPicker = document.getElementById('color'),
-        amountOfAnts = document.getElementById('amount'),
-        ants = [],
+        amountOfFrogs = document.getElementById('amount'),
+        frogs = [],
         canvasLeft = canvas.offsetLeft,
         canvasTop = canvas.offsetTop,
-        index = 0
-        //yOverBoard = 0 || canvas.
-        ;
+        index = 0,
+        first = 1;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    class Ant {
+    class frog {
 
         constructor(color) {
+            // if (first === 1) {
+            this.first = 1;
+            //}
+
             this.number = index++;
             this.x = canvas.width / 2;
             this.y = canvas.height / 2;
@@ -38,23 +41,30 @@
 
             if (this.timesInThisDirection === 0) {
 
-                //this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
+                this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
 
                 this.xDirection = this.getRandomNumberBetween(-2, 2);
 
                 this.yDirection = this.getRandomNumberBetween(-2, 2);
 
-                this.x += this.xDirection * 10;
-                this.y += this.yDirection * 10;
+                this.x += this.xDirection * 2;
+                this.y += this.yDirection * 2;
             }
             else {
-                this.x += this.xDirection * 10;
-                this.y += this.yDirection * 10;
+                this.x += this.xDirection * 2;
+                this.y += this.yDirection * 2;
 
                 this.timesInThisDirection--;
             }
 
-            context.fillStyle = 'green';
+            // if (this.first === 1) {
+            //     context.fillRect(this.x, this.y, 30, 30);
+            //     first++;
+            // }
+            //  else {
+            context.fillRect(this.x, this.y, 8, 8);
+            // }
+            context.fillStyle = color;
             context.fillRect(this.x - 1, this.y - 1, 2, 2);
             context.fillRect(this.x + 7, this.y - 1, 2, 2);
 
@@ -70,48 +80,50 @@
             context.fillRect(this.x + 6, this.y + 10, 2, 2);
             context.fillRect(this.x + 7, this.y + 11, 2, 2);
 
-            context.fillRect(this.x, this.y, 8, 8);
+
 
         }
 
     }
 
     canvas.addEventListener('click', function (event) {
-        var x = event.pageX - canvasLeft,
-            y = event.pageY - canvasTop;
+        //use this to have event on frog but not working yet.
+        // var x = event.pageX - canvasLeft,
+        //     y = event.pageY - canvasTop;
 
-        // ants.forEach(function (element) {
-        //if (y > element.y && y < element.y + 8 &&
-        // x > element.x && x < element.x + 8) {
+        // frogs.forEach(function (element) {
+        //     if (y > element.y - 2 && y < element.y + 15 &&
+        //         x > element.x - 2 && x < element.x + 15) {
+
         for (var i = 0; i < 100; i++) {
 
-            ants.push(new Ant(colorPicker.value));
+            frogs.push(new frog(colorPicker.value));
 
         }
         // }
-        //   });
+        // });
     });
 
     addButton.addEventListener('click', () => {
-        for (var i = 0; i < amountOfAnts.value; i++) {
-            ants.push(new Ant(colorPicker.value));
+        for (var i = 0; i < amountOfFrogs.value; i++) {
+            frogs.push(new frog(colorPicker.value));
 
         }
 
-        console.log(ants);
+        console.log(frogs);
     });
 
     for (var i = 0; i < 1; i++) {
-        ants.push(new Ant('black'));
+        frogs.push(new frog('green'));
     }
 
-    console.log(ants);
+    console.log(frogs);
 
     setInterval(() => {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        ants.forEach(ant => {
+        frogs.forEach(frog => {
 
-            ant.move(ant.color);
+            frog.move(frog.color);
 
         });
     }, 100);

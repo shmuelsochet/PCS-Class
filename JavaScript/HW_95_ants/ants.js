@@ -29,7 +29,6 @@
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
 
-
         move(color) {
 
             if (this.timesInThisDirection === 0 ||
@@ -38,7 +37,7 @@
                 (this.y + this.yDirection) >= canvas.height - 5 ||
                 (this.y + this.yDirection) < 0) {
 
-                this.timesInThisDirection = this.getRandomNumberBetween(5, 10);
+                this.timesInThisDirection = this.getRandomNumberBetween(1, 10);
                 do {
                     this.xDirection = this.getRandomNumberBetween(-2, 2);
                 }
@@ -51,7 +50,8 @@
 
                 }
                 while ((this.yDirection + this.y) >= canvas.height - 5 ||
-                (this.yDirection + this.y) < 0 || ((this.yDirection === 0) && (this.xDirection === 0)));
+                (this.yDirection + this.y) < 0 ||
+                    ((this.yDirection === 0) && (this.xDirection === 0)));
 
                 this.x += this.xDirection;
                 this.y += this.yDirection;
@@ -78,7 +78,7 @@
 
     });
 
-    for (var i = 0; i < 10000; i++) {
+    for (var i = 0; i < 1000; i++) {
         ants.push(new Ant('black'));
     }
 
