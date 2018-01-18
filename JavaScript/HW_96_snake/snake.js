@@ -12,9 +12,6 @@
         UP = 'up',
         DOWN = 'down';
 
-
-
-
     function resizeCanvas() {
         canvas.width = window.innerWidth - 10;
         canvas.height = window.innerHeight - 10;
