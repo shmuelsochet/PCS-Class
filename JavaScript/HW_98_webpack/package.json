@@ -1,0 +1,25 @@
+{
+  "name": "using_webpack",
+  "version": "1.0.0",
+  "description": "Use webpack instead of loading jquery through a separate script.",
+  "main": "webpack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "class"
+  },
+  "keywords": [
+    "webpack",
+    "jquery"
+  ],
+  "author": "ssochet",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
