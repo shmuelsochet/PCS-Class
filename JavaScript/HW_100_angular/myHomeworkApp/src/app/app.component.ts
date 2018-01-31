@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Person } from './shared/person';
+import { Address } from './shared/address';
+
+
 
 @Component({
   selector: 'app-root',
@@ -11,6 +14,17 @@ export class AppComponent {
 
   person: Person = {
     firstName: 'Donald',
-    lastName: 'Trump'
+    lastName: 'Trump',
+    address: {
+      street: '',
+      city: '',
+      state: '',
+      zip: ''
+    }
+
+
   };
+
+
+
 }
