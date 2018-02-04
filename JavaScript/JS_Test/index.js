@@ -14,7 +14,7 @@
         nextBlock = 0,
         postsLength,
         cssClass = nextBlock,
-        commentsClick = false;
+        currentPost;
 
 
     displayPage();
@@ -39,34 +39,34 @@
 
         $.get('https://jsonplaceholder.typicode.com/users', function (users) {
 
-            users.forEach(function (element) {
+            users.forEach(function (user) {
 
-                usersArray.push(element);
+                usersArray.push(user);
 
                 blogUl.append(
-                    '<li class=blogHover id=' + element.id + '>' + element.name + '</li>' +
+                    '<li class=blogHover id=' + user.id + '>' + user.name + '</li>' +
                     '<ul>' +
-                    '<li>' + element.website + '</li>' +
-                    '<li>' + element.company.name + '</li>' +
+                    '<li>' + user.website + '</li>' +
+                    '<li>' + user.company.name + '</li>' +
                     '<ul>' +
-                    '<li>' + element.company.catchPhrase + '</li>' +
-                    '<li>' + element.company.bs + '</li>' +
+                    '<li>' + user.company.catchPhrase + '</li>' +
+                    '<li>' + user.company.bs + '</li>' +
                     '</ul>' +
                     '</ul>'
                 );
 
-                $('#' + element.id).click(function () {
+                $('#' + user.id).click(function () {
 
-                    $.get('https://jsonplaceholder.typicode.com/posts?userId=' + element.id, function (posts) {
+                    $.get('https://jsonplaceholder.typicode.com/posts?userId=' + user.id, function (posts) {
 
                         blogUl.empty();
                         blogUl.css('listStyle', 'initial');
 
                         postsLength = posts.length;
 
-                        posts.forEach(function (element, index) {
+                        posts.forEach(function (post, index) {
 
-                            postsArray.push(element);
+                            postsArray.push(post);
 
                             if (index > 2) {
 
@@ -82,62 +82,61 @@
                             // Append posts along with comment button attach id to div to append comment
                             // and attach class to button to attach click-handler below.
                             blogUl.append(
-                                '<div id=' + element.id + ' class=' + cssClass + '>' +
-                                '<li><strong>Title:</strong> ' + element.title + '</li>' +
+                                '<div id=' + post.id + ' class=' + cssClass + '>' +
+                                '<li><strong>Title:</strong> ' + post.title + '</li>' +
                                 '<ul>' +
-                                '<li>' + element.body + '</li>' +
+                                '<li>' + post.body + '</li>' +
                                 '</ul>' +
-                                '<button class=-' + element.id + '>Comments</button>' +
+                                '<button class=-' + post.id + '>Comments</button>' +
                                 '</div>'
 
                             );
 
                             // Comment button click handler
-                            $('.-' + element.id).click(function () {
+                            $('.-' + post.id).click(function () {
 
-                                $('.-' + element.id).text('Hide Comments');
+                                if ($('.-' + post.id).text() === 'Comments') {
 
-                                if (commentsClick === false) {
+                                    $.get('https://jsonplaceholder.typicode.com/posts/' + post.id + '/comments', function (comments) {
 
-                                    commentsClick = true;
-                                    $.get('https://jsonplaceholder.typicode.com/posts/' + element.id + '/comments', function (comments) {
+                                        comments.forEach(function (comment) {
 
-                                        comments.forEach(function (element) {
-
-                                            commentsArray.push(element);
+                                            commentsArray.push(comment);
 
                                             // Append comments
-                                            $('#' + element.postId + '> ul').append(
-                                                '<ul class=' + element.postId + '>COMMENT ' + element.id + ':' +
-                                                '<li><strong>Name: </strong>' + element.name + '</li>' +
+                                            $('#' + comment.postId + '> ul').append(
+                                                '<ul class=' + comment.postId + '>COMMENT ' + comment.id + ':' +
+                                                '<li><strong>Name: </strong>' + comment.name + '</li>' +
                                                 '<ul>' +
-                                                '<li>' + element.body + '</li>' +
-                                                '<li><em>' + element.email + '</em></li>' +
+                                                '<li>' + comment.body + '</li>' +
+                                                '<li><em>' + comment.email + '</em></li>' +
                                                 '</ul>'
 
                                             );
                                         });
 
-                                        console.log('comments', commentsArray);
+                                        $('.-' + post.id).text('Hide Comments');
+
 
                                     }).fail(function (jqXHR) {
                                         console.log(jqXHR);
                                     });
                                 } else {
 
-                                    commentsArray.forEach(function (element) {
-                                        $('ul.' + element.postId).remove();
-                                    });
-                                    $('.-' + element.id).text('Comments');
+                                    currentPost = post.id;
 
-                                    commentsClick = false;
+                                    commentsArray.forEach(function () {
+                                        $('ul.' + currentPost).remove();
+
+                                    });
+
+                                    $('.-' + currentPost).text('Comments');
+
                                 }
 
                             });
 
                         });
-
-                        console.log('postArray', postsArray);
 
                         previousButton.show().click(function () {
 
@@ -177,8 +176,6 @@
                 });
 
             });
-
-            console.log('usersArray', usersArray);
 
         }).fail(function (jqXHR) {
             console.log(jqXHR);
