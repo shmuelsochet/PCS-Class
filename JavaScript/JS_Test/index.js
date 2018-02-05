@@ -117,10 +117,10 @@
                         '<li>' + post.body + '</li>' +
                         '</ul>' +
                         '<button class=-' + post.id + '>Comments</button>' +
-                        '<br><label>Name:</label><input id=name-' + post.id + '>' +
-                        '<br><label>Body:</label><input id=body-' + post.id + '>' +
-                        '<br><label>Email:</label><input id=email-' + post.id + '>' +
-                        '<br><button class=addComment-' + post.id + '>Add Comment</button>' +
+                        '<br/><label>Name:</label><input id=name-' + post.id + '>' +
+                        '<br/><label>Body:</label><input id=body-' + post.id + '>' +
+                        '<br/><label>Email:</label><input id=email-' + post.id + '>' +
+                        '<br/><button class=addComment-' + post.id + '>Add Comment</button>' +
                         '</div>'
 
                     );
