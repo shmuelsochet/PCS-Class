@@ -12,5 +12,6 @@ export class AddressComponent {
   @Input()
   address: Address;
 
+  // Mr. Lubowsky did not Import or Input person here
   @Input() person: Person;
 }

@@ -15,12 +15,15 @@ export class AppComponent {
   person: Person = {
     firstName: 'Donald',
     lastName: 'Trump',
+
+    // I believe this is how Mr. Lubowsky added the person's address.
     address: {
-      street: '',
-      city: '',
-      state: '',
-      zip: ''
-    }
+      street: '1600 Pennsylvania Ave. NW',
+      city: 'Washington',
+      state: 'D.C.',
+      zip: '20500'
+    },
+    friends: ['Nunes', 'Pence', 'Rubashkin']
 
 
   };
