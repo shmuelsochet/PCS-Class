@@ -54,16 +54,14 @@
 
                 users.forEach(function (user) {
 
-                    usersArray.push(user);
-
                     blogUl.append(
-                        '<li class=blogHover id=' + user.id + '>' + user.name + '</li>' +
+                        '<li class="blogHover " id=' + user.id + '><strong>Name:&nbsp;</strong>' + user.name + '</li>' +
                         '<ul>' +
-                        '<li>' + user.website + '</li>' +
-                        '<li>' + user.company.name + '</li>' +
+                        '<li><strong>Website:&nbsp;</strong>' + user.website + '</li>' +
+                        '<li><strong>Company:&nbsp;</strong> ' + user.company.name + '</li>' +
                         '<ul>' +
-                        '<li>' + user.company.catchPhrase + '</li>' +
-                        '<li>' + user.company.bs + '</li>' +
+                        '<li><strong>Catch Phrase:&nbsp;</strong>' + user.company.catchPhrase + '</li>' +
+                        '<li><strong>Tags:&nbsp;</strong>' + user.company.bs + '</li>' +
                         '</ul>' +
                         '</ul>'
                     );
@@ -95,8 +93,6 @@
 
                 posts.forEach(function (post, index) {
 
-                    postsArray.push(post);
-
                     if (index > 2) {
 
                         if (index % 3 === 0) {
@@ -111,16 +107,18 @@
                     // Append posts along with comment button attach id to div to append comment
                     // and attach class to button to attach click-handler below.
                     blogUl.append(
+
                         '<div id=' + post.id + ' class=' + cssClass + '>' +
-                        '<li><strong>Title:</strong> ' + post.title + '</li>' +
+                        '<li><strong>Title:&nbsp;</strong>' + post.title + '</li>' +
                         '<ul>' +
-                        '<li>' + post.body + '</li>' +
+                        '<li><strong>Body:&nbsp;</strong>' + post.body + '</li>' +
                         '</ul>' +
-                        '<button class=-' + post.id + '>Comments</button>' +
-                        '<br/><label>Name:</label><input id=name-' + post.id + '>' +
-                        '<br/><label>Body:</label><input id=body-' + post.id + '>' +
-                        '<br/><label>Email:</label><input id=email-' + post.id + '>' +
-                        '<br/><button class=addComment-' + post.id + '>Add Comment</button>' +
+                        '<button class="btn btn-secondary -' + post.id + '">Comments</button>' +
+                        '<div class=row><label class=col-sm-1>Name:</label><input class="form-control col-sm-2" id=name-' + post.id + '>' +
+                        '<label class=col-sm-1>Body:</label><input class="form-control col-sm-3" id=body-' + post.id + '>' +
+                        '<label class=col-sm-1>Email:</label><input class="form-control col-sm-3" id=email-' + post.id + '>' +
+                        '</div>' +
+                        '<br><button class="btn btn-secondary addComment-' + post.id + '">Add Comment</button>' +
                         '</div>'
 
                     );
@@ -149,36 +147,70 @@
 
     function showComments(postId) {
 
+
+
         if ($('.-' + postId).text() === 'Comments') {
 
-            fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
-                .then(checkResponse, networkError)
-                .then(function (comments) {
+            var commentsFetched = false;
 
-                    comments.forEach(function (comment) {
+            // Check if comments where already fetched.
+            for (var i = 0; i < commentsArray.length; i++) {
 
-                        commentsArray.push(comment);
+                // Check for new comment, if a comment was added before the post's old comments were fetched
+                if (commentsArray[i].postId === postId && !commentsArray[i].new) {
 
+                    commentsFetched = true;
+                    i = commentsArray.length;
+
+                }
+            }
+
+            if (commentsFetched === false) {
+
+                fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
+                    .then(checkResponse, networkError)
+                    .then(function (comments) {
+
+                        comments.forEach(function (comment) {
+
+                            commentsArray.push(comment);
+
+                            $('#' + comment.postId + '> ul').append(
+                                getCommentString(comment.postId, comment.id, comment.name, comment.body, comment.email)
+
+                            );
+
+
+                        });
+
+                        $('.-' + postId).text('Hide Comments');
+                    })
+                    .catch(function (error) {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            }
+
+            else if (commentsFetched === true) {
+
+                commentsArray.forEach(function (comment) {
+
+                    if (comment.postId === postId) {
                         // Append comments
                         $('#' + comment.postId + '> ul').append(
-                            '<ul class=' + comment.postId + '>COMMENT ' + comment.id + ':' +
-                            '<li><strong>Name: </strong>' + comment.name + '</li>' +
-                            '<ul>' +
-                            '<li>' + comment.body + '</li>' +
-                            '<li><em>' + comment.email + '</em></li>' +
-                            '</ul>'
+                            getCommentString(comment.postId, comment.id, comment.name, comment.body, comment.email)
 
                         );
-                    });
+                    }
 
-                    $('.-' + postId).text('Hide Comments');
-
-                })
-                .catch(function (error) {
-                    console.error('There has been a problem with your fetch operation:', error);
                 });
+
+                $('.-' + postId).text('Hide Comments');
+
+
+            }
         } else {
 
+            // Hide comments by removing the comments ul
             currentPost = postId;
 
             commentsArray.forEach(function () {
@@ -204,7 +236,8 @@
                     postId: postId,
                     name: nameInput.val(),
                     body: bodyInput.val(),
-                    email: emailInput.val()
+                    email: emailInput.val(),
+                    new: true
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -216,14 +249,14 @@
 
                 // Append comments
                 $('#' + comment.postId + '> ul').append(
-                    '<ul class=' + comment.postId + '>COMMENT ' + comment.id + ':' +
-                    '<li><strong>Name: </strong>' + comment.name + '</li>' +
-                    '<ul>' +
-                    '<li>' + comment.body + '</li>' +
-                    '<li><em>' + comment.email + '</em></li>' +
-                    '</ul>'
+
+                    getCommentString(comment.postId, comment.id, comment.name, comment.body, comment.email)
 
                 );
+
+                comment.postId = parseInt(comment.postId);
+
+                commentsArray.push(comment);
 
                 nameInput.val('');
                 bodyInput.val('');
@@ -233,6 +266,18 @@
             .catch(function (error) {
                 console.error('There has been a problem with your fetch operation:', error);
             });
+    }
+
+    function getCommentString(postId, id, name, body, email) {
+
+        var commentString = '<ul class=' + postId + '>COMMENT ' + id + ':' +
+            '<li><strong>Name:&nbsp;</strong>' + name + '</li>' +
+            '<ul>' +
+            '<li><strong>Comment:&nbsp;</strong>' + body + '</li>' +
+            '<li><strong>Email:&nbsp;</strong><em>' + email + '</em></li>' +
+            '</ul>';
+
+        return commentString;
     }
 
     function showPreviousThreePosts() {
