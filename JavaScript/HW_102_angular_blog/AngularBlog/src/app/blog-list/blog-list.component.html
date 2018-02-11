@@ -1,0 +1,25 @@
+<ul>
+  <div *ngFor="let blog of blogs; let i = index;">
+    <li>
+      <a href='#' (click)="showPost(blog)">{{blog.name}}</a>
+    </li>
+    <li>
+      <strong>Website: </strong>{{blog.website}}</li>
+    <li>
+      <strong>Company: </strong>{{blog.company}}</li>
+
+    <ul>
+      <div *ngFor="let post of blog.posts; let i = index;">
+        <li>
+          <strong>Title: </strong>{{post.title}}</li>
+        <li>
+          <strong>Body: </strong>{{post.body}}</li>
+        <ul>
+          <li *ngFor="let comments of post.comments; let i = index;">{{comments.name}}</li>
+        </ul>
+
+      </div>
+    </ul>
+
+  </div>
+</ul>
