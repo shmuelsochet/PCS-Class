@@ -12,4 +12,12 @@ export class BlogListComponent {
   blogs: Blog[];
 
 
+  showPost(blog: Blog) {
+    blog.posts.forEach(function (post) {
+
+    });
+  }
+
+
+
 }

@@ -9,15 +9,7 @@ import { Comment } from './shared/comment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
-  constructor() {
-    function showPosts(blog: Blog) {
-      blog.posts.forEach(function (post) {
-
-      });
-    }
-  }
+  title = 'Awesome Blogs';
 
   blogs: Blog[] = [
     {
