@@ -1,0 +1,11 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<a [routerLink]="['/contacts']">Contacts</a>
+<a [routerLink]="['/addContact']">Add Contact</a>
+
+<!-- <app-contact-table [contacts]="contacts"></app-contact-table> -->
+<router-outlet></router-outlet>

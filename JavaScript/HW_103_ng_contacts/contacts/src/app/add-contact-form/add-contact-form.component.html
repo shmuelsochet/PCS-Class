@@ -1,0 +1,22 @@
+<!-- <form id="addContactForm"> -->
+<div>
+  <label for="first">First</label>
+  <input #first id="first" />
+</div>
+<div>
+  <label for="last">Last</label>
+  <input #last id="last" required/>
+</div>
+<div>
+  <label for="email">Email</label>
+  <input #email type="" id="email" />
+</div>
+<div>
+  <label for="phone">Phone</label>
+  <input #phone id="phone" />
+</div>
+<div class="buttons">
+  <button (click)="addContact(first.value, last.value, email.value, phone.value)">OK</button>
+  <button (click)="clearFields()" type="button" id="cancel">Cancel</button>
+</div>
+<!-- </form> -->

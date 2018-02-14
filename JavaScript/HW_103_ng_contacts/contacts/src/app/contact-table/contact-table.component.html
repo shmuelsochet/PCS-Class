@@ -1,0 +1,21 @@
+<table id="contactTable">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <!-- <td colspan="5">No contacts</td> -->
+      <td>{{contact.firstName}}</td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.phone}}</td>
+    </tr>
+  </tbody>
+</table>
+<app-add-contact-form [contacts]="contacts"></app-add-contact-form>
+<router-outlet></router-outlet>
