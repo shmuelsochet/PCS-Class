@@ -20,7 +20,7 @@
         "array-bracket-newline": "error",
         "array-bracket-spacing": "error",
         "array-callback-return": "error",
-        "array-element-newline": "error",
+        "array-element-newline": "off",
         "arrow-body-style": "error",
         "arrow-parens": [
             "error",
@@ -108,8 +108,9 @@
         ],
         "line-comment-position": "error",
         "linebreak-style": [
-            "error",
-            "windows"
+            0
+            // "error",
+            // "windows"
         ],
         "lines-around-comment": "error",
         "lines-around-directive": "error",

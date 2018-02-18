@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 export default class Student extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     // this.state = { name: 'bob' };
-    // }
-
-
     printScores(scores) {
         const jsxScores = scores.map(score =>
             <p>{score}</p>
