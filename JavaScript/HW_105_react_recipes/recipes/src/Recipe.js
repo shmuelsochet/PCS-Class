@@ -7,7 +7,7 @@ export default class Recipe extends Component {
         this.state = { display: 'none' }
     }
 
-    displayInstructions = (e, f, g) => {
+    displayInstructions = () => {
 
         this.setState({ display: 'block' });
     }

@@ -22,7 +22,7 @@ export default class RecipeList extends Component {
         const recipeComponents = this.recipes.map((recipe, index) => <Recipe onClick={this.displayInstructions} key={index} recipe={recipe} />)
 
         return (
-            <div> {recipeComponents}  </div>
+            <div> {recipeComponents} </div>
         );
     }
 }
