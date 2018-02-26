@@ -1,28 +1,19 @@
 import React, { Component } from 'react';
 
-
-
 export default class AddRecipe extends Component {
 
 
     constructor(props) {
         super(props);
-        //this.state = { value: "" };
         this.state = { name: "", instructions: "", image: "" };
     }
 
-    /*handleChange = (e) => {
-        this.setState({ value: e.target.value });
-    }*/
 
     handleInputChange = (event) => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
-        /*let stateChange = {}
-        stateChange[name] = value;
-        this.setState(stateChange);*/
         this.setState({
             [name]: value
         });

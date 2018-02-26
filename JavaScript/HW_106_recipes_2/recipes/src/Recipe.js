@@ -15,7 +15,6 @@ export default class Recipe extends Component {
         this.setState({ hover: false });
     }
 
-
     toggleDetails = () => {
         this.setState({ showDetails: !this.state.showDetails });
     }
