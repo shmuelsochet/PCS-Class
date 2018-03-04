@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RecipeList from './RecipeList';
-import AddRecipe from './AddRecipe';
 
 export default class RecipeBook extends Component {
     constructor(props) {
@@ -14,8 +13,6 @@ export default class RecipeBook extends Component {
     }
 
     addRecipe = (recipe) => {
-        // const recipes = this.state.recipes.slice();
-        // recipes.push(recipe);
         const recipes = [...this.state.recipes, recipe];
         this.setState({ recipes: recipes });
     }
@@ -26,7 +23,6 @@ export default class RecipeBook extends Component {
                 Im a recipe book
                 <RecipeList recipes={this.state.recipes} />
                 <hr />
-                <AddRecipe addRecipe={this.addRecipe} />
             </div>
         );
     }

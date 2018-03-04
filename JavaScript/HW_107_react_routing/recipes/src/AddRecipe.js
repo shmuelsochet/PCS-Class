@@ -10,11 +10,13 @@ export default class AddRecipe extends Component {
     }
 
     handleSubmit = (event) => {
+
         this.props.addRecipe({
             name: this.state.name,
             instructions: this.state.instructions
         });
         event.preventDefault();
+
     }
 
     handleInputChange = (event) => {
@@ -42,7 +44,8 @@ export default class AddRecipe extends Component {
                         <input name="instructions" value={this.state.instructions} onChange={this.handleInputChange} />
                     </label>
                     <br />
-                    <input type="submit" value="AddRecipe" />
+                    <input type="submit" value="Add Recipe" />
+
                 </form>
             </div>
         );

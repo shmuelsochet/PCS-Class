@@ -21,7 +21,7 @@ export default class Recipe extends Component {
     }
 
     render() {
-        const details = this.state.showDetails ? <img style={{ width: 250 }} src={this.props.recipe.picture} /> : null;
+        const details = this.state.showDetails ? <img style={{ width: 250 }} src={this.props.recipe.picture} alt="recipe" /> : null;
         const style = this.state.hover ? { backgroundColor: 'yellow' } : null;
 
         return (

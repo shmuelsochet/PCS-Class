@@ -6,7 +6,6 @@ export default class RecipeList extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        //this.selectRecipe = this.selectRecipe.bind(this);
     }
 
     selectRecipe(recipe) {
@@ -14,7 +13,6 @@ export default class RecipeList extends Component {
     }
 
     render() {
-        /*<li key={recipe.name} onClick={(e) => { this.selectRecipe(recipe, e) }}>*/
         const recipes = this.props.recipes.map(recipe => (
             <li key={recipe.name} onClick={this.selectRecipe.bind(this, recipe)}>
                 {recipe.name}
