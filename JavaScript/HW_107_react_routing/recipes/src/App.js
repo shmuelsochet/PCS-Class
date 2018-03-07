@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Link to="/recipes">Recipes</Link> | <Link to="/addrecipe">Add Recipe</Link>>
+        <Link to="/recipes">Recipes</Link> | <Link to="/addrecipe">Add Recipe</Link>
         {Routes}
       </div>
     );

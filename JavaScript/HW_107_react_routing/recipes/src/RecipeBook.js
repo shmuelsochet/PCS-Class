@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RecipeList from './RecipeList';
+import AddRecipe from './AddRecipe';
 
 export default class RecipeBook extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class RecipeBook extends Component {
         };
     }
 
+
     addRecipe = (recipe) => {
         const recipes = [...this.state.recipes, recipe];
         this.setState({ recipes: recipes });
@@ -20,7 +22,6 @@ export default class RecipeBook extends Component {
     render() {
         return (
             <div>
-                Im a recipe book
                 <RecipeList recipes={this.state.recipes} />
                 <hr />
             </div>

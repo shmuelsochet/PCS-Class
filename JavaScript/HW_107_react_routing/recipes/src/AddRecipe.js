@@ -10,12 +10,12 @@ export default class AddRecipe extends Component {
     }
 
     handleSubmit = (event) => {
-
+        event.preventDefault();
         this.props.addRecipe({
             name: this.state.name,
             instructions: this.state.instructions
         });
-        event.preventDefault();
+
 
     }
 
