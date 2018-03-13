@@ -1,0 +1,22 @@
+{
+  "name": "useconnect",
+  "version": "1.0.0",
+  "description": "explore connect",
+  "main": "useConnect.js",
+  "scripts": {
+    "start": "nodemon useConnect.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "pcs-class"
+  },
+  "keywords": [
+    "connect",
+    "pcs"
+  ],
+  "author": "me",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^3.6.6"
+  }
+}
