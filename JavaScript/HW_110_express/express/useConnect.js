@@ -1,21 +1,18 @@
 const connect = require('connect'),
     app = connect(),
     queryParser = require('./queryParser'),
-    logger = require('./logger');
+    logger = require('./logger'),
+    magicWord = require('./magicWord');
 
 app.use(logger);
 app.use(queryParser);
 
 app.use((req, res, next) => {
-
     res.setHeader('Content-Type', 'text/html')
-    if (!req.query.magicWord || req.query.magicWord.toLowerCase() !== 'please') {
-        const error = new Error('<h4>Say the magic word. 404</h4>');
-        error.statusCode = 404;
-        throw (error);
-    }
     next();
 });
+
+app.use(magicWord);
 
 app.use('/home', (req, res, next) => {
     console.log(req._parsedUrl.query);
