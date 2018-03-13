@@ -7,9 +7,9 @@ app.use(logger);
 app.use(queryParser);
 
 app.use((req, res, next) => {
-    console.log('test', req.query)
+
     res.setHeader('Content-Type', 'text/html')
-    if (req.query.magicWord !== 'please') {
+    if (!req.query.magicWord || req.query.magicWord.toLowerCase() !== 'please') {
         const error = new Error('<h4>Say the magic word. 404</h4>');
         error.statusCode = 404;
         throw (error);
