@@ -1,51 +1,52 @@
 const connect = require('connect'),
     app = connect(),
-    queryParser = require('./queryParser');
-// url = require('url');
+    queryParser = require('./queryParser'),
+    logger = require('./logger');
 
-app.use(require('./logger'));
-app.use(require('./queryParser'));
+app.use(logger);
+app.use(queryParser);
 
 app.use((req, res, next) => {
+
     res.setHeader('Content-Type', 'text/html')
-    //     res.write("<h1>Hello from PCS</h1>");
+    if (req._parsedUrl.pathname === '/about' && req._parsedUrl.query !== 'magicWord=please') {
+        const error = new Error('<h4>Say the magic word. 404</h4>');
+        error.statusCode = 404;
+        throw (error);
+    }
     next();
 });
 
 app.use('/home', (req, res, next) => {
+    console.log(req._parsedUrl.query);
     res.end("<h2 style=color:red>The Home page</h2>");
-    //next();
+    console.log('line 18');
 });
 
 app.use('/about', (req, res, next) => {
     res.end("<h2>PCS is a great place.</h2>");
-    //next();
-});
 
-// app.use((req, res, next) => {
-//     res.write("<hr/><h5>Copyright PCS 2018</h5>");
-// });
+});
 
 app.use('/makeError', (req, res, next) => {
     foo.bar();
-    //next();
+
 });
 
 app.use('/sayHello', (req, res, next) => {
-    // const theUrl = url.parse(req.url, true);
+
     res.end(`<h2>Hello ${req.query.name || 'someone'}.</h2>`);
-    //next();
+
 });
 
 app.use('/sayGoodbye', (req, res, next) => {
-    // const theUrl = url.parse(req.url, true);
-    res.end(`<h2>Hello ${req.query.name || 'someone'}.</h2>`);
-    //next();
+
+    res.end(`<h2>Goodbye ${req.query.name || 'someone'}.</h2>`);
+
 });
 
 app.use((req, res, next) => {
-    //res.statusCode = 404
-    //res.end("<h5>Page not found</h5>");
+
     const error = new Error('<h4>Page not found. 404</h4>');
     error.statusCode = 404;
     throw (error);
