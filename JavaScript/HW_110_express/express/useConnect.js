@@ -15,9 +15,7 @@ app.use((req, res, next) => {
 app.use(magicWord);
 
 app.use('/home', (req, res, next) => {
-    console.log(req._parsedUrl.query);
     res.end("<h2 style=color:red>The Home page</h2>");
-    console.log('line 18');
 });
 
 app.use('/about', (req, res, next) => {
