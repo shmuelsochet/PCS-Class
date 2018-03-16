@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    a(href="http://localhost:3000/contacts") Contacts
+
+    form(action="", method="post")
+
+      label Id: 
+      input(name='id')
+      Label First: 
+      input(name='first')
+      Label Last: 
+      input(name='last')
+
+      input(type="submit", value='Add Contact')
+
+    block content
+
+    
