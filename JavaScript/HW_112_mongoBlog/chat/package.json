@@ -1,0 +1,15 @@
+{
+  "name": "hw_112_socketio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4"
+  }
+}
