@@ -1,0 +1,13 @@
+POST http://localhost:3000/contacts 
+
+content-type: application/json
+
+{
+    "id":8,
+    "first":"Nachman",
+    "last":"Rosen"
+}
+
+###
+
+http://localhost:3000/contacts
