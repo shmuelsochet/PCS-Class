@@ -1,0 +1,20 @@
+body {
+    padding: 50px;
+    font: 14px "Lucinda Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: lightblue;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#newPost input[type="text"], #newPost textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#newPost textarea {
+    height: 15em;
+}

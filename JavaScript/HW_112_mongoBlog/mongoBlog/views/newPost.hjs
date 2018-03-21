@@ -1,0 +1,9 @@
+<form method="post" id="newPost">
+    <label>Title
+        <input type="text" name="title" placeholder="Enter post title" />
+    </label>
+    <label>Content
+        <textarea name="content" placeholder="Enter post content"></textarea>
+    </label>
+    <button>Submit</button>
+</form>

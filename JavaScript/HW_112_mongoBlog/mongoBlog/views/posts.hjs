@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{#posts}}
+<div id="{{_id}}">
+    <h2>{{title}}</h2>
+    <h3>by {{author}} at {{date}}</h3>
+    <div>{{content}}</div>
+
+    <div>
+        <h4>Comments</h4>
+        {{#comments}}
+
+        <h5>by {{author}} at {{date}}</h5>
+        <div>{{content}}</div>
+        {{/comments}}
+    </div>
+
+
+</div>
+{{/posts}}
