@@ -1,0 +1,10 @@
+.mypy_cache
+.vscode
+screencasts
+.DS_Store
+class
+PHP
+javascript
+html
+resources
+readme.md
