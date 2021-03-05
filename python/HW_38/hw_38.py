@@ -29,7 +29,6 @@ for i in range(1, 11):
 # 2.
 import random, math
 random_number = math.floor(random.random() * 10)
-print(math.floor(random_number * 10))
 guess_number = -1
 while guess_number != random_number:
     input_number_str = input('Guess a number from 0-10: ')
