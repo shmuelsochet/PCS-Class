@@ -30,7 +30,7 @@ def days_in_month(month: str):
         return 'Invalid Month'
 
 
-def days_in_month_lists(month: str):
+def get_days_in_month_lists(month: str):
     months = ['january', 'february', 'march', 'april',
               'may', 'june', 'july', 'august', 'september',
               'october', 'november', 'december']
@@ -42,7 +42,17 @@ def days_in_month_lists(month: str):
         return f'Invalid Month: {e}'
 
 
-def days_in_month_tuples(month: str):
+def days_in_month_lists():
+    months = ['january', 'february', 'march', 'april',
+              'may', 'june', 'july', 'august', 'september',
+              'october', 'november', 'december']
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    for index, month in enumerate(months):
+        print(f'{month.title()}: {days[index]}')
+
+
+def get_days_in_month_tuples(month: str):
     months = ('january', 'february', 'march', 'april',
               'may', 'june', 'july', 'august', 'september',
               'october', 'november', 'december')
@@ -54,7 +64,18 @@ def days_in_month_tuples(month: str):
         return f'Invalid Month: {e}'
 
 
-def days_in_month_dict(month: str):
+def days_in_month_tuples():
+    months = ('january', 'february', 'march', 'april',
+              'may', 'june', 'july', 'august', 'september',
+              'october', 'november', 'december')
+    days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+
+    for month in months:
+        index = months.index(month)
+        print(f'{month.title()}: {days[index]}')
+
+
+def get_days_in_month_dict(month: str):
     months_days = {
         'january': 31,
         'february': 28,
@@ -75,18 +96,94 @@ def days_in_month_dict(month: str):
         return f'Invalid Month: {e}'
 
 
+def days_in_month_dict():
+    months_days = {
+        'january': 31,
+        'february': 28,
+        'march': 31,
+        'april': 30,
+        'may': 31,
+        'june': 30,
+        'july': 31,
+        'august': 31,
+        'september': 30,
+        'october': 31,
+        'november': 30,
+        'december': 31
+    }
+    for month, days in months_days.items():
+        print(f'{month.title()}: {days}')
+
+
+class BankAccount:
+
+    created_accounts = 0
+
+    @classmethod
+    def increment_accounts(cls):
+        cls.created_accounts += 1
+
+    @classmethod
+    def get_created_accounts(cls):
+        return cls.created_accounts
+
+    def __init__(self, name, account_number, balance):
+        self.__name = name
+        self.__account_number = account_number
+        self.__balance = balance
+        self.increment_accounts()
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_account_number(self):
+        return self.__account_number
+
+    def set_account_number(self, account_number):
+        self.__account_number = account_number
+
+    def get_balance(self):
+        return self.__balance
+
+    def set_balance(self, balance):
+        self.__balance = balance
+
+
+checking_account = BankAccount('checking', 1234, '2500')
+
+print(checking_account.get_name())
+print(checking_account.get_account_number())
+print(checking_account.get_balance())
+print(checking_account.get_created_accounts())
+
+savings_account = BankAccount('savings', 5678, '3500')
+print(savings_account.get_name())
+print(savings_account.get_account_number())
+print(savings_account.get_balance())
+print(savings_account.get_created_accounts())
+
+print('lists')
+days_in_month_lists()
+print('tuples')
+days_in_month_tuples()
+print('dict')
+days_in_month_dict()
+
 print(days_in_month('january'))
 print(days_in_month('february'))
 print(days_in_month('hi'))
 
-print(days_in_month_lists('january'))
-print(days_in_month_lists('february'))
-print(days_in_month_lists('hi'))
+print(get_days_in_month_lists('january'))
+print(get_days_in_month_lists('february'))
+print(get_days_in_month_lists('hi'))
 
-print(days_in_month_tuples('january'))
-print(days_in_month_tuples('february'))
-print(days_in_month_tuples('hi'))
+print(get_days_in_month_tuples('january'))
+print(get_days_in_month_tuples('february'))
+print(get_days_in_month_tuples('hi'))
 
-print(days_in_month_dict('january'))
-print(days_in_month_dict('february'))
-print(days_in_month_dict('hi'))
+print(get_days_in_month_dict('january'))
+print(get_days_in_month_dict('february'))
+print(get_days_in_month_dict('hi'))
